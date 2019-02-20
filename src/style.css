@@ -1,0 +1,4 @@
+#app {
+  display: grid;
+  grid-auto-rows: 100vh;
+}

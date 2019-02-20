@@ -1,0 +1,25 @@
+{
+  "name": "sheb.rocks",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run -s start:dev",
+    "start:dev": "webpack-dev-server --mode development",
+    "start:prod": "npm run -s build && webpack-dev-server --mode production",
+    "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "preact": "^8.4.2",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  }
+}

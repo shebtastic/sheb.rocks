@@ -1,0 +1,17 @@
+header {
+  position: fixed;
+  height: 2em;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+nav a {
+  margin: 0 1em;
+  text-decoration: none;
+}
