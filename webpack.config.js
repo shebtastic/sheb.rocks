@@ -40,6 +40,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'Sheb rocks!',
       template: 'src/index.html',
       minify: {
         collapseWhitespace: true,
