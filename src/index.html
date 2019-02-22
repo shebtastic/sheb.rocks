@@ -17,24 +17,6 @@
           url(https://fonts.gstatic.com/l/font?kit=CSR64z1Qlv-GDxkbKVQ_TOIAStt-jqQEPVqZGQMYbyiQpJ-O9PPqO8LFpymi_SKDuNm5e9s-guq7fCx6MdtMDYQvRW1Uv30EQrFATbwgXP3aDZn0KQdt&skey=315d90a3c97443a7&v=v15) format('woff2');
       }
 
-      @media screen and (min-width: 1150px) {
-        body {
-          display: flex;
-          justify-content: center;
-        }
-
-        main {
-          width: 70%;
-        }
-
-        #landing > .card {
-          display: block;
-          grid-area: 2 / 2 / -2 / -2;
-          box-shadow: 0 24px 32px 0 rgba(0,0,0,.12);
-          border-radius: 8px;
-        }
-      }
-
       html, body {
         padding: 0;
         margin: 0;
@@ -85,7 +67,6 @@
       }
 
       #portrait > img {
-        max-width: 100%;
         max-height: 100%;
         border-radius: 50%;
       }
@@ -127,6 +108,24 @@
 
       #contact > a > div > svg {
         width: 100%;
+      }
+
+      @media screen and (min-width: 1150px) {
+        body {
+          display: flex;
+          justify-content: center;
+        }
+
+        main {
+          width: 70%;
+        }
+
+        #landing > .card {
+          display: block;
+          grid-area: 2 / 2 / -2 / -2;
+          box-shadow: 0 24px 32px 0 rgba(0,0,0,.12);
+          border-radius: 8px;
+        }
       }
     </style>
   </head>
