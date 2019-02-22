@@ -29,7 +29,7 @@
 
         #landing > .card {
           display: block;
-          grid-area: 3 / 2 / -2 / -2;
+          grid-area: 2 / 2 / -2 / -2;
           box-shadow: 0 24px 32px 0 rgba(0,0,0,.12);
           border-radius: 8px;
         }
@@ -80,9 +80,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        min-width: 0;
+        min-height: 0;
       }
 
       #portrait > img {
+        max-width: 100%;
         max-height: 100%;
         border-radius: 50%;
       }
@@ -135,7 +138,7 @@
           <h1>Hey there! 👋</h1>
         </div>
         <div id="portrait">
-          <img src="assets/portrait.jpg" />
+            <img src="assets/portrait.jpg" />
         </div>
         <div id="bio">
           <article>
@@ -187,6 +190,8 @@
         </div>
       </div>
     </main>
+    <script>
+    </script>
   </body>
 </html>
 
