@@ -6,7 +6,8 @@ module.exports = {
   entry: './src/index.js',
   devServer: {
     compress: true,
-    port: 8081,
+    host: '0.0.0.0',
+    port: 8080,
   },
   output: {
     filename: 'bundle.js',
