@@ -5,16 +5,14 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <!--
-    &text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,!.
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
-    -->
     <style>
       html, body {
         padding: 0;
         margin: 0;
+        height: 100%;
         font-family: 'Quicksand', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -26,7 +24,7 @@
 
       main {
         display: grid;
-        grid-auto-rows: 100vh;
+        grid-auto-rows: var(--window-inner-height, minmax(auto, 100vh));
       }
 
       #landing {
@@ -158,7 +156,7 @@
         </div>
         <div id="bio">
           <article>
-            <p>I'm a test Stack Developer who occasionally dips his toes into the DevOps waters.</p>
+            <p>I'm a Full Stack Developer who occasionally dips his toes into the DevOps waters.</p>
             <p>In my spare time I enjoy reading, drinking coffee or building stuff humanity most definitely didn't need in the first place.</p>
           </article>
         </div>
@@ -195,7 +193,7 @@
             </div>
             <span>LinkedIn</span>
           </a>
-          <a id="mail" href="mailto:michaelhabeth%40googlemail%2ede" title="Mail">
+          <a id="mail" href="mailto:michaelhabeth@googlemail.de" title="Mail">
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/>
@@ -206,7 +204,7 @@
         </div>
       </div>
     </main>
-    <script>
+    <script defer src="bundle.js">
     </script>
   </body>
 </html>
