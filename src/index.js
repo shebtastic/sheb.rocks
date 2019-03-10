@@ -8,7 +8,7 @@ const setWindowInnerHeightStyle = () => {
   document.documentElement.style.setProperty('--window-inner-height', `${window.innerHeight}px`);
 }
 
-document.addEventListener('resize', setWindowInnerHeightStyle)
+window.addEventListener('resize', setWindowInnerHeightStyle)
 setWindowInnerHeightStyle()
 
 // render(
