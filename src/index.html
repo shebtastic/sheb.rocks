@@ -4,25 +4,18 @@
     <meta charset="utf-8">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <!--
+    &text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,!.
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
     -->
     <style>
-      @font-face {
-        font-family: 'News Cycle';
-        font-style: normal;
-        font-weight: 400;
-        src: local('News Cycle'),
-          local('NewsCycle'),
-          url(https://fonts.gstatic.com/l/font?kit=CSR64z1Qlv-GDxkbKVQ_TOIAStt-jqQEPVqZGQMYbyiQpJ-O9PPqO8LFpymi_SKDuNm5e9s-guq7fCx6MdtMDYQvRW1Uv30EQrFATbwgXP3aDZn0KQdt&skey=315d90a3c97443a7&v=v15) format('woff2');
-      }
-
       html, body {
         padding: 0;
         margin: 0;
-        font-family: 'News Cycle', sans-serif;
+        font-family: 'Quicksand', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
@@ -74,7 +67,7 @@
         grid-area: bio;
       }
 
-      #contact {
+      div#contact {
         grid-area: contact;
         height: 100%;
         justify-content: space-between;
@@ -165,7 +158,7 @@
         </div>
         <div id="bio">
           <article>
-            <p>I'm a Full Stack Developer who occasionally dips his toes into the DevOps waters.</p>
+            <p>I'm a test Stack Developer who occasionally dips his toes into the DevOps waters.</p>
             <p>In my spare time I enjoy reading, drinking coffee or building stuff humanity most definitely didn't need in the first place.</p>
           </article>
         </div>
