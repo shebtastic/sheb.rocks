@@ -7,7 +7,6 @@ module.exports = {
   devServer: {
     compress: true,
     host: '0.0.0.0',
-    port: 8080,
   },
   output: {
     filename: 'bundle.js',
@@ -56,7 +55,9 @@ module.exports = {
       inject: false,
     }),
     new CopyWebpackPlugin([
-      { from: 'src/assets', to: 'assets/' }
+      { from: 'src/assets', to: 'assets/' },
+      { from: 'src/manifest.json', to: '.' },
+      { from: 'src/sw.js', to: '.' },
     ]),
   ],
 }
