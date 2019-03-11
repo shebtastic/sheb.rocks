@@ -70,8 +70,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: 'src/assets', to: 'assets/' },
-      { from: 'src/manifest.json', to: '.' },
-      { from: 'src/sw.js', to: '.' },
+      { from: 'src/webApp/manifest.json', to: '.' },
+      { from: 'src/webApp/sw.js', to: '.' },
     ]),
   ],
 }
