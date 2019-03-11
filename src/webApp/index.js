@@ -1,8 +1,8 @@
 import { h, render } from 'preact'
 import './style'
 
-import Header from './components/header'
-import Pages from './components/pages'
+import Header from './header'
+import Pages from './pages'
 
 // render(
 //   <Header />,
@@ -25,7 +25,7 @@ import Pages from './components/pages'
 //     document.querySelector('main > div#app')
 //   )
 // )
-//
+
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js')
 }
