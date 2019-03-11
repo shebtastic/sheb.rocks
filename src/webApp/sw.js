@@ -18,9 +18,9 @@ if (workbox) {
   )
 
   workbox.routing.registerRoute(
-    /\.woff2$/,
+    /(?:^https:\/\/fonts\.googleapis\.com|^https:\/\/fonts\.gstatic\.com)/,
     new workbox.strategies.StaleWhileRevalidate({
-      cacheName: 'font-cache',
+      cacheName: 'fonts-cache',
     })
   )
 
