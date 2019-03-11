@@ -4,13 +4,6 @@ import './style'
 import Header from './components/header'
 import Pages from './components/pages'
 
-const setWindowInnerHeightStyle = () => {
-  document.documentElement.style.setProperty('--window-inner-height', `${window.innerHeight}px`);
-}
-
-window.addEventListener('resize', setWindowInnerHeightStyle)
-setWindowInnerHeightStyle()
-
 // render(
 //   <Header />,
 //   document.querySelector('body'),

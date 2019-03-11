@@ -1,4 +1,5 @@
 const path = require('path')
+const fs = require('fs')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -7,6 +8,11 @@ module.exports = {
   devServer: {
     compress: true,
     host: '0.0.0.0',
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   output: {
     filename: 'bundle.js',
@@ -19,7 +25,10 @@ module.exports = {
     rules: [
       {
         test: /\.m?js$/,
-        exclude: /node_modules/,
+        exclude: [
+          /node_modules/,
+          /templates/,
+        ],
         use: {
           loader: 'babel-loader',
           options: {
@@ -34,6 +43,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        exclude: [
+          /node_modules/,
+          /templates/,
+        ],
         use: ['style-loader', 'css-loader'],
       },
     ],
@@ -41,7 +54,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Sheb rocks!',
-      template: 'src/index.html',
+      template: 'src/templates/index.html',
+      inlineScript: fs.readFileSync('src/templates/inlineScript.js', 'utf8'),
+      inlineStyle: fs.readFileSync('src/templates/inlineStyle.css', 'utf8'),
       minify: {
         collapseWhitespace: true,
         removeComments: true,
@@ -52,7 +67,6 @@ module.exports = {
         minifyJS: true,
         minifyCSS: true,
       },
-      inject: false,
     }),
     new CopyWebpackPlugin([
       { from: 'src/assets', to: 'assets/' },
