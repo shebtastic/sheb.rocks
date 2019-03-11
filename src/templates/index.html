@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="shortcut icon" href="assets/favicon.ico">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script>
       <%= htmlWebpackPlugin.options.inlineScript %>
@@ -11,6 +12,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
+    <% _.forEach(htmlWebpackPlugin.options.appleIcons, function(icon) { %><link rel="apple-touch-icon" sizes="<%- icon.sizes %>" href="<%- icon.src %>"></link><% }) %>
     <style>
       <%= htmlWebpackPlugin.options.inlineStyle %>
     </style>
@@ -23,7 +25,7 @@
           <h1>Hey there! 👋</h1>
         </div>
         <div id="portrait">
-          <img src="../assets/portrait.jpg" alt="Portrait" />
+          <img src="assets/portrait.jpg" alt="Portrait" />
         </div>
         <div id="bio">
           <article>

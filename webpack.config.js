@@ -57,6 +57,7 @@ module.exports = {
       template: 'src/templates/index.html',
       inlineScript: fs.readFileSync('src/templates/inlineScript.js', 'utf8'),
       inlineStyle: fs.readFileSync('src/templates/inlineStyle.css', 'utf8'),
+      appleIcons: JSON.parse(fs.readFileSync('src/webApp/manifest.json')).icons,
       minify: {
         collapseWhitespace: true,
         removeComments: true,
