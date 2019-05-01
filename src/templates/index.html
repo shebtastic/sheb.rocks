@@ -13,7 +13,9 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
-    <% _.forEach(htmlWebpackPlugin.options.appleIcons, function(icon) { %><link rel="apple-touch-icon" sizes="<%- icon.sizes %>" href="<%- icon.src %>"></link><% }) %>
+    <% _.forEach(htmlWebpackPlugin.options.appleIcons, function(icon) { %>
+      <link rel="apple-touch-icon" sizes="<%- icon.sizes %>" href="<%- icon.src %>"></link>
+    <% }) %>
     <style>
       <%= htmlWebpackPlugin.options.inlineStyle %>
     </style>
