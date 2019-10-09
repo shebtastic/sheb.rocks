@@ -11,19 +11,6 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
-    const tagLinks = (tags) => {
-      let list = []
-      for(let i = 0; i < tags.length; i++) {
-        list = [
-          ...list,
-          i === tags.length - 1
-            ? <Link to={`/tags/${tags[i].replace(/\s/,'-')}`} key={tags[i]}>{tags[i]}</Link>
-            : <><Link to={`/tags/${tags[i].replace(/\s/,'-')}`} key={tags[i]}>{tags[i]}</Link>{`, `}</>
-        ]
-      }
-      return list
-    }
-
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -44,10 +31,7 @@ class BlogIndex extends React.Component {
                   {`${title}`}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date} {
-                node.frontmatter.tags && node.frontmatter.tags.length ? <>{`[`} {tagLinks(node.frontmatter.tags)} {`]`}</> : null
-              }
-              </small>
+              <small>{node.frontmatter.date}</small>
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
@@ -80,7 +64,6 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            tags
             description
           }
         }
