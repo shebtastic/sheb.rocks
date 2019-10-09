@@ -9,7 +9,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from "../../utils/typography"
 
 function Bio() {
   return (
@@ -43,14 +43,14 @@ function Bio() {
               <br/>
               I like to create stuff and in my spare time I enjoy reading, drinking coffee or building stuff humanity most definitely didn't need in the first place.
               <br/>
-              You can find me on {` `}
+              You can message me on {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
                 twitter
               </a>, {` `}
               <a href={`https://keybase.io/${social.keybase}`}>
                 keybase
               </a>, or write me a {` `}
-              <a href={`mailto:${social.mail}`}>
+              <a href={`mailto:${social.mail}?subject=${encodeURI("Tell me more!")}&body=${encodeURI("I'm interested in < training | speaking | workshops | other-opportunities > on the topic of < topic >.\n\nDescription: \nContact:\n")}`}>
                 mail
               </a>.
             </p>

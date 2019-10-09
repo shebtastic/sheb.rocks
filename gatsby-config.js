@@ -3,11 +3,11 @@ module.exports = {
     title: `Sheb rocks! 🤘`,
     author: `Michael Habeth`,
     description: `Personal site and blog of Michael Habeth.`,
-    siteUrl: `http://sheb.rocks`,
+    siteUrl: `https://sheb.rocks`,
     social: {
       twitter: `shebtastic`,
       keybase: `sheb`,
-      mail: `michaelhabeth@googlemail.com`,
+      mail: `michael@sheb.rocks`,
     },
   },
   plugins: [

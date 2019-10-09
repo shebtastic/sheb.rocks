@@ -1,7 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm, scale } from "../../utils/typography"
+
+import styles from './style.module.css'
 
 class Layout extends React.Component {
   render() {
@@ -63,9 +65,29 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
+          <Link
+            to={`/imprint`}
+          >
+            Imprint (Impressum)
+          </Link>
+          {` `}
+          <Link
+            to={`/dataprivacy`}
+          >
+            Data Privacy Policy (Datenschutzerlärung)
+          </Link>
+          <br />
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.gatsbyjs.org" rel="noopener noreferrer">Gatsby</a>.
+          {` `}
+          Hosted on
+          {` `}
+          <a href="https://www.pages.github.com" rel="noopener noreferrer">GitHub Pages</a>.
+          <br />
+          All the websites code can be found on this
+          {` `}
+          <a href="https://www.github.com/shebtastic/sheb.rocks" rel="noopener noreferrer">GitHub Repo</a>.
         </footer>
       </div>
     )

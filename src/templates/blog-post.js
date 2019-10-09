@@ -7,6 +7,12 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      tldr: false,
+    }
+  }
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
