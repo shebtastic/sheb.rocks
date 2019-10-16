@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,11 +12,7 @@ class Imprint extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Imprint" />
-        <Link to={""} rel="prev">
-          ← Home
-        </Link>
-        <br />
-        <small style={{marginTop: "3.5rem", display: "block"}}>As the author of this website is a german citizen, thus this site itself is subject to german law, the following imprint is presented in german.</small>
+        <small>As the author of this website is a german citizen, thus this site itself is subject to german law, the following imprint is presented in german.</small>
 
         <h1>Impressum</h1>
 

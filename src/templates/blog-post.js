@@ -24,10 +24,6 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <Link to={""} rel="prev">
-          ← Home
-        </Link>
-        <br />
         <h1>{post.frontmatter.title}</h1>
         <p
           style={{
