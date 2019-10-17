@@ -18,31 +18,34 @@ function Bio() {
       render={data => {
         const { author, social } = data.site.siteMetadata
         return (
-          <div
-            style={{
-              display: `flex`,
-              marginBottom: rhythm(2.5),
-            }}
-          >
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
+          <>
+            <div
               style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
-                minWidth: 125,
-                minHeight: 125,
-                borderRadius: `100%`,
+                marginBottom: rhythm(1),
               }}
-              imgStyle={{
-                borderRadius: `50%`,
-              }}
-            />
+            >
+              <Image
+                fixed={data.avatar.childImageSharp.fixed}
+                alt={author}
+                style={{
+                  marginRight: rhythm(1 / 2),
+                  marginBottom: 0,
+                  minWidth: rhythm(3.5),
+                  minHeight: rhythm(3.5),
+                  borderRadius: `100%`,
+                  float: `left`,
+                }}
+                imgStyle={{
+                  borderRadius: `50%`,
+                }}
+              />
+              <p>
+                Personal site and blog of <strong>{author}</strong>.
+                <br/>
+                I like to create stuff and in my spare time I enjoy reading, drinking coffee or building stuff humanity most definitely didn't need in the first place.
+              </p>
+            </div>
             <p>
-              Personal site and blog of <strong>{author}</strong>.
-              <br/>
-              I like to create stuff and in my spare time I enjoy reading, drinking coffee or building stuff humanity most definitely didn't need in the first place.
-              <br/>
               You can message me on {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
                 twitter
@@ -54,7 +57,7 @@ function Bio() {
                 mail
               </a>.
             </p>
-          </div>
+          </>
         )
       }}
     />

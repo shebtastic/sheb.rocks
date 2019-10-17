@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
@@ -24,7 +23,13 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
+        <h1
+          style={{
+            marginTop: rhythm(1 / 4)
+          }}
+        >
+          {post.frontmatter.title}
+        </h1>
         <p
           style={{
             ...scale(-1 / 5),
@@ -33,7 +38,19 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
-          {post.frontmatter.date}
+          {post.frontmatter.date} {
+            post.frontmatter.tags && post.frontmatter.tags.length
+            ? <>
+                {`[ `}
+                {post.frontmatter.tags.map((tag, index, {length}) => 
+                  <React.Fragment key={tag}>
+                    <Link to={`/tags/${tag.replace(/\s/,'-')}`}>{tag}</Link>{index !== length - 1 ? `, ` : null}
+                  </React.Fragment>
+                )}
+                {` ]`}
+              </> 
+            : null
+          }
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -41,10 +58,9 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
-
         <ul
           style={{
+            marginBottom: 0,
             display: `flex`,
             flexWrap: `wrap`,
             justifyContent: `space-between`,
@@ -54,14 +70,14 @@ class BlogPostTemplate extends React.Component {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link to={`/blog${previous.fields.slug}`} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link to={`/blog${next.fields.slug}`} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -89,6 +105,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        tags
         description
       }
     }

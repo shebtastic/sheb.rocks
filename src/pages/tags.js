@@ -1,9 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-// Components
 import { Link, graphql } from "gatsby"
+
 import SEO from "../components/seo"
+import Layout from "../components/layout"
 
 const TagsPage = ({
   data: {
@@ -12,8 +13,9 @@ const TagsPage = ({
       siteMetadata: { title },
     },
   },
+  location,
 }) => (
-  <div>
+  <Layout location={"test"} title={title}>
     <SEO
       title={title}
       keywords={[]}
@@ -23,14 +25,14 @@ const TagsPage = ({
       <ul>
         {group.map(tag => (
           <li key={tag.fieldValue}>
-            <Link to={`/tags/${tag.fieldValue.replace(/\s/,'-')}/`}>
+            <Link to={`/tags/${tag.fieldValue.replace(/\s/,'-')}`}>
               {tag.fieldValue} ({tag.totalCount})
             </Link>
           </li>
         ))}
       </ul>
     </div>
-  </div>
+  </Layout>
 )
 
 TagsPage.propTypes = {

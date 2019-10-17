@@ -1,58 +1,59 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props
+    const { data, location } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
-    const tagLinks = (tags) => {
-      let list = []
-      for(let i = 0; i < tags.length; i++) {
-        list = [
-          ...list,
-          i === tags.length - 1
-            ? <Link to={`/tags/${tags[i].replace(/\s/,'-')}`} key={tags[i]}>{tags[i]}</Link>
-            : <><Link to={`/tags/${tags[i].replace(/\s/,'-')}`} key={tags[i]}>{tags[i]}</Link>{`, `}</>
-        ]
-      }
-      return list
-    }
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={location} title={siteTitle}>
         <SEO
           title="All posts"
           keywords={[`blog`, `javascript`, `js`, `react`, `habeth`, `michael habeth`, `kubernetes`, `k8s`, `knative`, `machine learning`, `ml`, `tensorflow`, `tf`]}
         />
-        <Bio />
-        {posts.map(({ node }) => {
+        {posts.map(({ node }, index, {length}) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug} className="post-link">
               <h3
                 style={{
+                  marginTop: rhythm(1 / 4),
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <Link style={{ boxShadow: `none` }} to={`/blog/${node.fields.slug}`}>
                   {`${title}`}
                 </Link>
               </h3>
               <small>{node.frontmatter.date} {
-                node.frontmatter.tags && node.frontmatter.tags.length ? <>{`[`} {tagLinks(node.frontmatter.tags)} {`]`}</> : null
+                node.frontmatter.tags && node.frontmatter.tags.length
+                  ? <>
+                      {`[ `}
+                      {node.frontmatter.tags.map((tag, index, {length}) => 
+                        <React.Fragment key={tag+node.fields.slug}>
+                          <Link to={`/tags/${tag.replace(/\s/,'-')}`}>{tag}</Link>{index !== length - 1 ? `, ` : null}
+                        </React.Fragment>
+                      )}
+                      {` ]`}
+                    </> 
+                  : null
               }
               </small>
               <p
+                style={{
+                  marginBottom: rhythm(1 / 2),
+                }}
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}
               />
+              {index !== length - 1 ? <hr /> : null}
             </div>
           )
         })}

@@ -19,11 +19,15 @@ const typography = new Typography({
   bodyFontFamily: [
     'Futura', 'Trebuchet MS', 'Arial', 'sans-serif',
   ],
-  overrideThemeStyles: () => ({
+  overrideThemeStyles: (VerticalRythm, options, styles) => ({
     'h1, h2, h3': {
       fontFamily: [
         'arial rounded mt bold', 'Futura', 'Trebuchet MS', 'Arial', 'sans-serif',
-      ].join(',')
+      ].join(','),
+    },
+    'hr': {
+      ...styles.hr,
+      marginTop: styles.hr.marginBottom,
     }
   })
 })
