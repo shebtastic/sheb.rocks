@@ -6,8 +6,10 @@ const Themer = () => {
 
   const gradient = `linear-gradient(${gradientRotation}deg,${gradientColors}) 0 0 / 400vmax 400vmax`
 
-  const root = document.querySelector(':root')
-  root.style['background'] = gradient
+  if (typeof window !== `undefined`) {
+    const root = window.document.querySelector(':root')
+    root.style['background'] = gradient
+  }
 
   return null
 }

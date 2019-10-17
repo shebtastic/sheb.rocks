@@ -24,7 +24,8 @@ If you've thought to yourself: <q>That's pretty on the nose for a component!</q>
 
 <p>Let's look at the code. The Themer component itself is pretty small too. While the original code was pretty concise, this is way more readable.</p>
 <p>As we're not really going to render anything new directly using this component, but only modify existing DOM, this component doesn't need React per se.<br />
-Reacts functional components are by definition just plain functions. If we were going to use hooks, context or JSX for example, we would have needed to import React, but for now this function Themer runs, modifies and returns <code class="language-js">null</code> for React to render - nothing.</p>
+Reacts functional components are by definition just plain functions. If we were going to use hooks, context or JSX for example, we would have needed to import React, but for now this function Themer runs, modifies and returns <code class="language-js">null</code> for React to render - nothing.<br />
+The query and modification of the :root style is wrapped in a conditional, so that the code doesn't run during Gatsby compile-time. If it wasn't it would throw an undefined.</p>
 
 ```js
 const Themer = () => {
@@ -35,9 +36,10 @@ const Themer = () => {
 
   const gradient = `linear-gradient(${gradientRotation}deg,${gradientColors}) 0 0 / 400vmax 400vmax`
 
-  const root = document.querySelector(':root')
-  root.style['background'] = gradient
-
+  if (typeof window !== `undefined`) {
+    const root = window.document.querySelector(':root')
+    root.style['background'] = gradient
+  }
   return null
 }
 
