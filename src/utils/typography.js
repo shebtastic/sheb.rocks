@@ -20,14 +20,19 @@ const typography = new Typography({
     'Futura', 'Trebuchet MS', 'Arial', 'sans-serif',
   ],
   overrideThemeStyles: (VerticalRythm, options, styles) => ({
-    'h1, h2, h3': {
+    'h1, h2, h3, h4, h5, h6': {
       fontFamily: [
         'arial rounded mt bold', 'Futura', 'Trebuchet MS', 'Arial', 'sans-serif',
       ].join(','),
+      marginTop: 0,
     },
     'hr': {
       ...styles.hr,
       marginTop: styles.hr.marginBottom,
+    },
+    'ul': {
+      ...styles.ul,
+      paddingLeft: VerticalRythm.rhythm(1),
     }
   })
 })
