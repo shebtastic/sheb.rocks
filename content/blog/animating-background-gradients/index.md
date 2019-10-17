@@ -23,23 +23,31 @@ If you've thought to yourself: <q>That's pretty on the nose for a component!</q>
 <p>On the one hand, that's a pretty bad idea, since it's not managed from React and I'm basically setting stuff outside my scope, because I can. Doing so is in total disregard of what might already be there and who or what else uses that attribute. On the other hand, it also opens up another possibility: state persistence across renders, without having to muck with the Gatsby setup. So far I'm reshuffling the gradient on every rerender, but I might want to keep it across renders and since it's not part of the React render, that also means it's not prone to flickering during.</p>
 
 <p>Let's look at the code. The Themer component itself is pretty small too. While the original code was pretty concise, this is way more readable.</p>
-<p>As we're not really going to render anything new directly using this component, but only modify existing DOM, this component doesn't need React per se.<br />
-Reacts functional components are by definition just plain functions. If we were going to use hooks, context or JSX for example, we would have needed to import React, but for now this function Themer runs, modifies and returns <code class="language-js">null</code> for React to render - nothing.<br />
+<p>As we're not really going to render anything new directly using this component, but only modify existing DOM, this component doesn't need React per se. Here we're using the <code class="language-js">useEffect</code> hook so that we can run the update function on rerenders.<br />
+If we are going to use hooks, context or JSX for example, we need to import React. Reacts functional components are by definition just plain functions, if we wanted to schedule a background resizing differently or didn't care about the background size, we could do without the import.<br />
+Themer runs, modifies and returns <code class="language-js">null</code> for React to render - nothing.<br />
 The query and modification of the :root style is wrapped in a conditional, so that the code doesn't run during Gatsby compile-time. If it wasn't it would throw an undefined.</p>
 
 ```js
+import React from 'react'
+
 const Themer = () => {
   const gradientRotation = Math.floor(360 * Math.random())
   const randomColor = () => '#' + (Math.floor(0xffffff * Math.random())).toString(16).padStart(6, '0')
   const randomGradientLength = Math.max(Math.ceil(5 * Math.random()), 2)
   const gradientColors = Array.from({length: randomGradientLength}, randomColor)
 
-  const gradient = `linear-gradient(${gradientRotation}deg,${gradientColors}) 0 0 / 400vmax 400vmax`
-
-  if (typeof window !== `undefined`) {
+  const update = () => {
     const root = window.document.querySelector(':root')
+
+    const scaledMaxDimension = Math.max(root.offsetHeight, root.offsetWidth) * 2
+    const gradient = `linear-gradient(${gradientRotation}deg,${gradientColors}) 0 0 / ${maxDimension}px ${maxDimension}px`
+
     root.style['background'] = gradient
   }
+
+  React.useEffect(update)
+
   return null
 }
 
@@ -51,8 +59,8 @@ export default Themer
 If the random value was too low the #RGB-value was of invalid length. It didn't happen too often, but of course still more than enough, leaving the background white. The string (excluding the #) is allowed to be either three or six hex-characters of <code class="language-regex">[0-9a-f]</code> long, but could be anywhere between one or six without the padding.<br />
 Thinking about #RGB as one long hex-value, creating the hex is easier calculated, than looping through the allowed alphabet and concatenating the characters to a string. We create a decimal from zero to 0xffffff which corresponds to 16777215, floor it to an integer, then convert it to a base 16 string and zero-pad if it's too short, then finally concat it with # to get a valid #RGB-value.</p>
 
-<p>The animation isn't too interesting, but luckily a moving gradient can be done in pure CSS. The gradient itself might not be animated, but we're setting a background larger than the viewport and move the background-position.<br />
-<code class="language-css">background</code> is shorthand for multiple background properties. After the background-color definition of linear-gradient there is a background-position and then delimited by / the background-size, written as <code class="language-css">0 0 / 400vmax 400vmax</code>.</p>
+<p>The animation isn't too interesting, but luckily a moving gradient can be done in pure CSS. The gradient itself might not be animated, but we're setting a background larger than the viewport and move the background-position. In this case we've made the background a square with the sides as long as the largest px-value of rendered content.<br />
+<code class="language-css">background</code> is shorthand for multiple background properties. After the background-color definition of linear-gradient there is a background-position and then delimited by / the background-size, written as <code class="language-css">0 0 / ${maxDimension}px ${maxDimension}px</code>.</p>
 
 <p>What is left is creating the keyframes and attaching them using CSS.</p>
 
