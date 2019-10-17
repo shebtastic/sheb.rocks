@@ -1,0 +1,29 @@
+:root {
+  animation: animatedBackgroundGradient 20s ease alternate infinite;
+}
+
+@keyframes animatedBackgroundGradient {
+	0% {
+		background-position: 0% 0%;
+	}
+	25% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 0%;
+	}
+	75% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
+
+header, main, footer {
+  background-color: white;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0 1px rgba(218, 218, 218, 0.1), 0 2px 4px 0 rgba(255, 255, 255, 0.32);
+}

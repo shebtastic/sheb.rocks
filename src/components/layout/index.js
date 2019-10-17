@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Bio from '../bio'
+import Themer from '../themer'
 
 import { rhythm, scale } from "../../utils/typography"
 
@@ -100,6 +101,7 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
+        <Themer />
         <header>{header}</header>
         <main>{children}</main>
         <footer>{footer}</footer>
