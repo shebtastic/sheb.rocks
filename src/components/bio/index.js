@@ -19,44 +19,38 @@ function Bio() {
         const { author, social } = data.site.siteMetadata
         return (
           <>
-            <div
+            <Image
+              fluid={data.avatar.childImageSharp.fluid}
+              alt={author}
               style={{
-                marginBottom: rhythm(1),
+                marginRight: rhythm(1 / 2),
+                marginBottom: 0,
+                minWidth: rhythm(4),
+                minHeight: rhythm(5),
+                bottom: 0,
+                float: `left`,
               }}
-            >
-              <Image
-                fixed={data.avatar.childImageSharp.fixed}
-                alt={author}
-                style={{
-                  marginRight: rhythm(1 / 2),
-                  marginBottom: 0,
-                  minWidth: rhythm(3.5),
-                  minHeight: rhythm(3.5),
-                  borderRadius: `100%`,
-                  float: `left`,
-                }}
-                imgStyle={{
-                  borderRadius: `50%`,
-                }}
-              />
-              <p>
-                Personal site and blog of <strong>{author}</strong>.
-                <br/>
-                I like to create stuff and in my spare time I enjoy reading, drinking coffee or building stuff humanity most definitely didn't need in the first place.
-              </p>
-            </div>
-            <p>
+              imgStyle={{
+                borderRadius: rhythm(1 / 2),
+              }}
+            />
+            <p>Personal site and blog of <strong>{author}</strong>.</p>
+            <p>I like to create stuff and in my spare time I enjoy reading, drinking coffee or building stuff humanity most definitely didn't need in the first place.</p>
+            <p style={{
+              marginBottom: 0,
+            }}>
               You can message me on {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                twitter
-              </a>, {` `}
-              <a href={`https://keybase.io/${social.keybase}`}>
+              <a className="external-link" href={`https://keybase.io/${social.keybase}`}>
                 keybase
+              </a>, {` `}
+              <a className="external-link" href={`https://twitter.com/${social.twitter}`}>
+                twitter
               </a>, or write me a {` `}
-              <a href={`mailto:${social.mail}?subject=${encodeURI("Tell me more!")}&body=${encodeURI("I'm interested in < training | speaking | workshops | other-opportunities > on the topic of < topic >.\n\nDescription: \nContact:\n")}`}>
+              <a className="external-link" href={`mailto:${social.mail}?subject=${encodeURI("Tell me more!")}&body=${encodeURI("I'm interested in < training | speaking | workshops | other-opportunities > on the topic of < topic >.\n\nDescription: \nContact:\n")}`}>
                 mail
               </a>.
             </p>
+            <div style={{clear:'both'}}></div>
           </>
         )
       }}
@@ -68,8 +62,8 @@ const bioQuery = graphql`
   query BioQuery {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 125, height: 125) {
-          ...GatsbyImageSharpFixed
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }

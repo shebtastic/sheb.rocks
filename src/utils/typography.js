@@ -20,6 +20,12 @@ const typography = new Typography({
     'Futura', 'Trebuchet MS', 'Arial', 'sans-serif',
   ],
   overrideThemeStyles: (VerticalRythm, options, styles) => ({
+    'header, main, footer': {
+      boxShadow: `0px 70px 40px -50px rgba(0, 0, 0, 0.2), 0px 3px 20px rgba(0, 0, 0, 0.1)`,
+      background: `white`,
+      borderRadius: VerticalRythm.rhythm(1 / 2),
+      padding: VerticalRythm.rhythm(1),
+    },
     'h1, h2, h3, h4, h5, h6': {
       fontFamily: [
         'arial rounded mt bold', 'Futura', 'Trebuchet MS', 'Arial', 'sans-serif',
@@ -27,12 +33,32 @@ const typography = new Typography({
       marginTop: 0,
     },
     'hr': {
-      ...styles.hr,
       marginTop: styles.hr.marginBottom,
     },
     'ul': {
-      ...styles.ul,
       paddingLeft: VerticalRythm.rhythm(1),
+    },
+    'p': {
+      marginBottom: VerticalRythm.rhythm(0.5),
+    },
+    'body': {
+      color: 'black',
+    },
+    'a': {
+      textDecoration: 'none',
+      boxShadow: `0px -${VerticalRythm.rhythm(1 / 9)} 0px 0px #00ddff inset`,
+      transition: '0.3s',
+      color: 'black',
+    },
+    'h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a': {
+      boxShadow: `0px -${VerticalRythm.rhythm(1 / 9)} 0px 0px #00ddff inset`,
+    },
+    'a.external-link': {
+      boxShadow: `0px -${VerticalRythm.rhythm(1 / 9)} 0px 0px hsla(334, 100%, 45%, 1) inset`
+    },
+    'a:hover, a:focus': {
+      boxShadow: `0px -${VerticalRythm.rhythm(1)} 0px 0px #ffc800 inset`,
+      color: 'black',
     }
   })
 })

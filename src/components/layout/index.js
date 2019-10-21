@@ -17,15 +17,15 @@ class Layout extends React.Component {
       <>
         © {new Date().getFullYear()}, Built with
         {` `}
-        <a href="https://www.gatsbyjs.org" rel="noopener noreferrer">Gatsby</a>.
+        <a className="external-link" href="https://www.gatsbyjs.org" rel="noopener noreferrer">Gatsby</a>.
         {` `}
         Hosted on
         {` `}
-        <a href="https://www.pages.github.com" rel="noopener noreferrer">GitHub Pages</a>.
+        <a className="external-link" href="https://www.pages.github.com" rel="noopener noreferrer">GitHub Pages</a>.
         <br />
         All the websites code can be found on this
         {` `}
-        <a href="https://www.github.com/shebtastic/sheb.rocks" rel="noopener noreferrer">GitHub Repo</a>.
+        <a className="external-link" href="https://www.github.com/shebtastic/sheb.rocks" rel="noopener noreferrer">GitHub Repo</a>.
         <hr />
         <Link to={`/imprint`}>Imprint (Impressum)</Link>
         {` `}
@@ -93,17 +93,20 @@ class Layout extends React.Component {
 
     return (
       <div
-        className="test"
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
           maxWidth: rhythm(32),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          padding: rhythm(1),
         }}
       >
         <Themer />
         <header>{header}</header>
-        <main>{children}</main>
+        <main style={{
+          margin: `${rhythm(1)} 0`,
+        }}>
+          {children}
+        </main>
         <footer>{footer}</footer>
       </div>
     )

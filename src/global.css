@@ -1,29 +1,32 @@
+html, body {
+	min-width: 100%;
+	min-height: 100%;
+}
+
 :root {
-  animation: animatedBackgroundGradient 20s ease alternate infinite;
+	animation: animatedBackgroundGradient 20s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
 }
 
 @keyframes animatedBackgroundGradient {
 	0% {
-		background-position: 0% 0%;
+		background-position: top left;
 	}
-	25% {
-		background-position: 0% 50%;
+	15% {
+		background-position: top right;
 	}
-	50% {
-		background-position: 100% 0%;
+	40% {
+		background-position: bottom right;
 	}
-	75% {
-		background-position: 100% 50%;
+	55% {
+		background-position: bottom left;
+	}
+	70% {
+		background-position: top right;
+	}
+	90% {
+		background-position: bottom center;
 	}
 	100% {
-		background-position: 0% 0%;
+		background-position: top left;
 	}
-}
-
-header, main, footer {
-  background-color: white;
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 0.5em;
-  box-shadow: 0 0 0 1px rgba(218, 218, 218, 0.1), 0 2px 4px 0 rgba(255, 255, 255, 0.32);
 }
