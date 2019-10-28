@@ -21,9 +21,9 @@ const typography = new Typography({
   ],
   overrideThemeStyles: (VerticalRythm, options, styles) => ({
     'header, main, footer': {
-      boxShadow: `0px 70px 40px -50px rgba(0, 0, 0, 0.2), 0px 3px 20px rgba(0, 0, 0, 0.1)`,
+      boxShadow: `0 0 4.236em rgba(14,30,37,.09)`,
       background: `white`,
-      borderRadius: VerticalRythm.rhythm(1 / 2),
+      borderRadius: VerticalRythm.rhythm(1 / 3),
       padding: VerticalRythm.rhythm(1),
     },
     'h1, h2, h3, h4, h5, h6': {

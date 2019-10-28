@@ -29,9 +29,8 @@ function Bio() {
                 minHeight: rhythm(5),
                 bottom: 0,
                 float: `left`,
-              }}
-              imgStyle={{
-                borderRadius: rhythm(1 / 2),
+                borderRadius: rhythm(1 / 4),
+                boxShadow: `6px 6px 17px -3.2px rgba(14,30,37,.09)`,
               }}
             />
             <p>Personal site and blog of <strong>{author}</strong>.</p>

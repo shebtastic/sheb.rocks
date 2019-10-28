@@ -94,6 +94,7 @@ class Layout extends React.Component {
     return (
       <div
         style={{
+          marginTop: `-18em`,
           marginLeft: `auto`,
           marginRight: `auto`,
           maxWidth: rhythm(32),
@@ -103,7 +104,7 @@ class Layout extends React.Component {
         <Themer />
         <header>{header}</header>
         <main style={{
-          margin: `${rhythm(1)} 0`,
+          margin: `${rhythm(1.5)} 0`,
         }}>
           {children}
         </main>

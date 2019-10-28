@@ -3,7 +3,19 @@ html, body {
 	min-height: 100%;
 }
 
-:root {
+html {
+	background: #f7f8f8;
+}
+
+.wave {
+	color: #f7f8f8;
+}
+
+.wave > svg {
+	animation: animatedWaveMovement 16s ease-in-out infinite alternate-reverse;
+}
+
+#___gatsby-background > .wave-before {
 	animation: animatedBackgroundGradient 20s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
 }
 
@@ -28,5 +40,14 @@ html, body {
 	}
 	100% {
 		background-position: top left;
+	}
+}
+
+@keyframes animatedWaveMovement {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-50%);
 	}
 }
