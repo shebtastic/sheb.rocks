@@ -1,0 +1,25 @@
+name: CI
+
+on: 
+  push:
+    branches: 
+      - release/*
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: |
+        npm install
+        npm run build
+    - run: |
+        mkdir -p "${HOME}/.ssh"
+        echo ${{ secrets.DEPLOY_KEY }} > "${HOME}/.ssh/id_rsa"
+        chmod 400 "${HOME}/.ssh/id_rsa"
+    - run: npm run deploy -- --repo git@github.com:shebtastic/sheb.rocks.git
