@@ -25,6 +25,7 @@ jobs:
       run: |
         mkdir -p "${HOME}/.ssh"
         echo "$DEPLOY_KEY" > "${HOME}/.ssh/id_rsa"
+        ssh-keyscan -t rsa github.com > "${HOME}/.ssh/known_hosts"
         chmod 400 "${HOME}/.ssh/id_rsa"
     - name: Publish
       run: npm run deploy -- --repo git@github.com:shebtastic/sheb.rocks.git
