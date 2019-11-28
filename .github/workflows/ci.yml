@@ -18,7 +18,10 @@ jobs:
     - name: Build
       run: |
         npm install
-        npm run build
+    - name: Set up Git
+      run: |
+        git config --global user.email "michael@sheb.rocks"
+        git config --global user.name "Sheb (but not really)"
     - name: Set up SSH
       env:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
