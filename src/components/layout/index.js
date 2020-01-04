@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Bio from '../bio'
-import Themer from '../themer'
 
 import { rhythm, scale } from "../../utils/typography"
 
@@ -94,14 +93,12 @@ class Layout extends React.Component {
     return (
       <div
         style={{
-          marginTop: `-18em`,
           marginLeft: `auto`,
           marginRight: `auto`,
           maxWidth: rhythm(32),
           padding: rhythm(1),
         }}
       >
-        <Themer />
         <header>{header}</header>
         <main style={{
           margin: `${rhythm(1.5)} 0`,
