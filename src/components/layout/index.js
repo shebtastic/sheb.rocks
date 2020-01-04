@@ -99,13 +99,13 @@ class Layout extends React.Component {
           padding: rhythm(1),
         }}
       >
-        <header>{header}</header>
-        <main style={{
+        <header className="card">{header}</header>
+        <main className="card" style={{
           margin: `${rhythm(1.5)} 0`,
         }}>
           {children}
         </main>
-        <footer>{footer}</footer>
+        <footer className="card">{footer}</footer>
       </div>
     )
   }

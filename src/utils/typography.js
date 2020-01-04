@@ -20,11 +20,18 @@ const typography = new Typography({
     'Futura', 'Trebuchet MS', 'Arial', 'sans-serif',
   ],
   overrideThemeStyles: (VerticalRythm, options, styles) => ({
-    'header, main, footer': {
-      boxShadow: `0 0 4.236em rgba(14,30,37,.09)`,
-      background: `white`,
-      borderRadius: VerticalRythm.rhythm(1 / 3),
+    'html, body': {
+      minWidth: '100%',
+      minHeight: '100%',
+    },
+    'html': {
+      background: 'linear-gradient( 120deg, hsla(45, 99%, 97%, 0.7) 0%, hsla(189, 100%, 96%, 0.5) 50%, hsla(335, 100%, 95%, 0.5) 100% )',
+    },
+    '.card': {
+      position: 'relative',
       padding: VerticalRythm.rhythm(1),
+      borderRadius: '24px',
+      boxShadow: '-8px -6px 80px 0 inset hsla(0, 0%, 100%, 0.38)',
     },
     'h1, h2, h3, h4, h5, h6': {
       fontFamily: [

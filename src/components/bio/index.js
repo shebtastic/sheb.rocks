@@ -30,7 +30,7 @@ function Bio() {
                 bottom: 0,
                 float: `left`,
                 borderRadius: rhythm(1 / 4),
-                boxShadow: `6px 6px 17px -3.2px rgba(14,30,37,.09)`,
+                boxShadow: `-12px -6px 36px 0 hsl(0, 0%, 100%), 4px 4px 14px -3.2px hsla(0, 0%, 79%, 1)`,
               }}
             />
             <p>Personal site and blog of <strong>{author}</strong>.</p>
