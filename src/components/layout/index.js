@@ -29,7 +29,7 @@ class Layout extends React.Component {
         <hr />
         <Link to={`/imprint`}>Imprint (Impressum)</Link>
         {` `}
-        <Link to={`/dataprivacy`}>Data Privacy Policy (Datenschutzerlärung)</Link>
+        <Link to={`/dataprivacy`}>Data Privacy Policy (Datenschutzerklärung)</Link>
       </>
     )
 
