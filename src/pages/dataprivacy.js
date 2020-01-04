@@ -40,7 +40,7 @@ class DataPrivacy extends React.Component {
         <p>Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserf&uuml;llung gegen&uuml;ber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).</p>
         <p>Unser Hoster wird Ihre Daten nur insoweit verarbeiten, wie dies zur Erf&uuml;llung seiner Leistungspflichten erforderlich ist und unsere Weisungen in Bezug auf diese Daten befolgen.</p>
         <h4>GitHub Pages</h4>
-        <p>Diese Website wird auf Servern von <a className="external-link" href="https://www.github.com/">Github Inc.</a>, 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA gehostet. Beachten Sie daher auch die <a className="external-link" href="https://help.github.com/articles/github-privacy-statement/">GitHub Privacy Policy</a>.</p>
+        <p>Diese Website wird auf Servern von <a className="external-link" href="https://www.github.com/" rel="noopener nofollow">Github Inc.</a>, 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA gehostet. Beachten Sie daher auch die <a className="external-link" href="https://help.github.com/articles/github-privacy-statement/">GitHub Privacy Policy</a>.</p>
 
         <h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
         <h3>Datenschutz</h3>
@@ -54,9 +54,9 @@ class DataPrivacy extends React.Component {
         (Einzelunternehmer)<br />
         Argelanderstr. 55<br />
         53115 Bonn</p>
-        <p>Telefon: <a className="external-link" href="tel:+49(0)1772319862" rel="nofollow">+49 (0) 177 2319 862</a><br />
-        Telefax: <a className="external-link" href="fax:+49(0)22824375224" rel="nofollow">+49 (0) 228 2437 5224</a><br />
-        E-Mail: <a className="external-link" href="mailto:michael@sheb.rocks" rel="nofollow">michael@sheb.rocks</a></p>
+        <p>Telefon: <a className="external-link" href="tel:+49(0)1772319862">+49 (0) 177 2319 862</a><br />
+        Telefax: <a className="external-link" href="fax:+49(0)22824375224">+49 (0) 228 2437 5224</a><br />
+        E-Mail: <a className="external-link" href="mailto:michael@sheb.rocks">michael@sheb.rocks</a></p>
         <p>Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B. Namen, E-Mail-Adressen o. &Auml;.) entscheidet.</p>
 
         <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
@@ -100,8 +100,8 @@ class DataPrivacy extends React.Component {
         <p>Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Web Fonts, die von Google bereitgestellt werden. Beim Aufruf einer Seite l&auml;dt Ihr Browser die ben&ouml;tigten Web Fonts in ihren Browsercache, um Texte und Schriftarten korrekt anzuzeigen.</p>
         <p>Zu diesem Zweck muss der von Ihnen verwendete Browser Verbindung zu den Servern von Google aufnehmen. Hierdurch erlangt Google Kenntnis dar&uuml;ber, dass &uuml;ber Ihre IP-Adresse diese Website aufgerufen wurde. Die Nutzung von Google Web Fonts erfolgt im Interesse einer einheitlichen und ansprechenden Darstellung unserer Online-Angebote. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.</p>
         <p>Wenn Ihr Browser Web Fonts nicht unterst&uuml;tzt, wird eine Standardschrift von Ihrem Computer genutzt.</p>
-        <p>Weitere Informationen zu Google Web Fonts finden Sie unter <a className="external-link" href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener noreferrer">https://developers.google.com/fonts/faq</a> und in der Datenschutzerkl&auml;rung von Google: <a className="external-link" href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy?hl=de</a>.</p>
-        <p>Quelle: <a className="external-link" href="https://www.e-recht24.de">eRecht24</a></p>
+        <p>Weitere Informationen zu Google Web Fonts finden Sie unter <a className="external-link" href="https://developers.google.com/fonts/faq" rel="noopener noreferrer">https://developers.google.com/fonts/faq</a> und in der Datenschutzerkl&auml;rung von Google: <a className="external-link" href="https://policies.google.com/privacy?hl=de" rel="noopener noreferrer">https://policies.google.com/privacy?hl=de</a>.</p>
+        <p>Quelle: <a className="external-link" href="https://www.e-recht24.de" rel="noopener nofollow">eRecht24</a></p>
       </Layout>
     )
   }
