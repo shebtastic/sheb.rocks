@@ -39,10 +39,10 @@ function Bio() {
               marginBottom: 0,
             }}>
               You can message me on {` `}
-              <a className="external-link" href={`https://keybase.io/${social.keybase}`}>
+              <a className="external-link" href={social.keybase}>
                 keybase
               </a>, {` `}
-              <a className="external-link" href={`https://twitter.com/${social.twitter}`}>
+              <a className="external-link" href={social.twitter}>
                 twitter
               </a>, or write me a {` `}
               <a className="external-link" href={`mailto:${social.mail}?subject=${encodeURI("Tell me more!")}&body=${encodeURI("I'm interested in < training | speaking | workshops | other-opportunities > on the topic of < topic >.\n\nDescription: \nContact:\n")}`}>

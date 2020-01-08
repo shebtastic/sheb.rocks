@@ -5,9 +5,12 @@ module.exports = {
     description: `Personal site and blog of Michael Habeth.`,
     siteUrl: `https://sheb.rocks`,
     social: {
-      twitter: `shebtastic`,
-      keybase: `sheb`,
+      twitter: `https://twitter.com/shebtastic`,
+      keybase: `https://keybase.io/sheb`,
       mail: `michael@sheb.rocks`,
+      linkedin: `https://linkedin.com/in/michael-habeth-38aa0615a`,
+      xing: `https://www.xing.com/profile/Michael_Habeth`,
+      github: `https://github.com/shebtastic`
     },
   },
   plugins: [
