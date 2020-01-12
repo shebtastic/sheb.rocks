@@ -5,10 +5,10 @@
 }
 
 .card:before {
-	width: calc(100% + 2px);
-	height: calc(100% + 2px);
-	top: -1px;
-	left: -1px;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	top: -2px;
+	left: -2px;
 	background: linear-gradient( 156deg, hsla(0, 0%, 100%, 0.88) 0%, hsla(0, 0%, 100%, 0.88) 35%, #ffffff00 59%, hsla(0, 0%, 75%, 0.38) 84%, hsla(0, 0%, 60%, 0.18) 100% );
 	border-radius: 26px;
 	box-shadow: -16px -16px 40px 0 hsla(0, 0%, 100%, 0.8), 2px 2px 8px -8px #a9a9a991, 16px 4px 64px 0 hsla(0, 0%, 66%, 0.6);
@@ -21,4 +21,97 @@
 	left: 0px;
 	background: hsla(334, 100%, 99%, 0.7);
 	border-radius: 24px;
+}
+
+@media screen and (max-width: 375px) {
+	.card {
+		margin: 1.75rem 0.75rem;
+	}
+}
+
+@media screen and (max-width: 512px) {
+	.cv p {
+		margin-bottom: 0.875rem;
+	}
+}
+
+@media screen and (min-width: 512px) {
+	.cv header.card h3:first-of-type, .cv header.card a:first-of-type {
+    display: none;
+	}
+
+	.cv .card h4 {
+		line-height: 1.75;
+		margin-bottom: 0;
+	}
+
+	.cv .card > div > div {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		grid-gap: 0em 1em;
+	}
+
+	.cv ul, .cv ul li:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+@media print {
+	html {
+		font-size: 12px;
+	}
+
+	#___gatsby > div > div {
+		max-width: unset !important;
+	}
+
+	html, .card, .card:before, .card:after, a {
+		background: none !important;
+		box-shadow: none !important;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	main {
+		margin: 0
+	}
+
+	.card > h3 {
+		page-break-after: avoid;
+	}
+
+	.card > div {
+		page-break-before: avoid;
+	}
+
+	.card > div > div {
+		page-break-inside: avoid;
+	}
+
+	.cv .card > div > div {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		grid-gap: 0em 1em;
+	}
+
+	.cv .card h4 {
+		line-height: 1.75;
+		margin-bottom: 0;
+	}
+
+	.cv ul, .cv ul li:last-of-type {
+		margin-bottom: 0;
+	}
+
+	.cv hr {
+		margin: calc(0.5em - 1px) 0;
+	}
+
+	.qrlink {
+		display: block !important;
+	}
+
+	header a, footer {
+		display: none;
+	}
 }

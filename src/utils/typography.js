@@ -27,11 +27,30 @@ const typography = new Typography({
     'html': {
       background: 'linear-gradient( 120deg, hsla(45, 99%, 97%, 0.7) 0%, hsla(189, 100%, 96%, 0.5) 50%, hsla(335, 100%, 95%, 0.5) 100% )',
     },
+    'main': {
+      margin: `${VerticalRythm.rhythm(1.5)} 0`,
+    },
     '.card': {
       position: 'relative',
       padding: VerticalRythm.rhythm(1),
+      margin: `${VerticalRythm.rhythm(1)}`,
       borderRadius: '24px',
       boxShadow: '-8px -6px 80px 0 inset hsla(0, 0%, 100%, 0.38)',
+    },
+    '.cv .card h4': {
+      marginBottom: '0.5em',
+    },
+    '.cv p': {
+      marginBottom: 0,
+    },
+    '.cv ul': {
+      marginTop: 'calc(1.75rem / 2)',
+    },
+    '.qrlink': {
+      position: 'absolute !important',
+      top: '1.75rem',
+      right: '1.75rem',
+      display: 'none !important',
     },
     'h1, h2, h3, h4, h5, h6': {
       fontFamily: [
@@ -54,7 +73,7 @@ const typography = new Typography({
     'a': {
       textDecoration: 'none',
       boxShadow: `0px -${VerticalRythm.rhythm(1 / 9)} 0px 0px #00ddff inset`,
-      transition: '0.3s',
+      transition: 'box-shadow 0.3s',
       color: 'black',
     },
     'h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a': {
