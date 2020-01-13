@@ -181,20 +181,6 @@ const projects = [
   },
   {
     "date": {
-      "from": { "day": 1, "month": 3, "year": 2017 },
-      "to": { "day": 1, "month": 10, "year": 2017 }
-    },
-    "place": "Mobile Banking App",
-    "description": "Entwicklung einer modularen Banking-App.\nDie App soll als Teil einer Product-Suite für Banken dem Banken-Endkunden die Möglichkeit bieten mobil und jederzeit über seine finanzielle Lage informiert zu bleiben.\nFür die Bank als Kunden steht hierbei vorallem die Modularität bei der Auswahl gewünschter Featuresets im Vordergrund.",
-    "tasks": [
-      "Entwicklung einer Hybriden App als React-SPA in einem Cordova Container",
-      "Testen der Komponenten und der Redux-Stores",
-      "Entwicklung eines Java-REST-Adapters für HBCI/FinTS",
-      "Entwicklung an einem Java-HBCI/FinTS-Mock-Server zum Integrationstesten des Backends"
-    ]
-  },
-  {
-    "date": {
       "from": { "day": 1, "month": 5, "year": 2017 },
       "to": { "day": 1, "month": 6, "year": 2017 }
     },
@@ -206,6 +192,20 @@ const projects = [
       "Entwicklung einer Hybriden App als React-SPA in einem Cordova Container",
       "Anbindung der Visa Consumer Transaction Control",
       "Vermittlung agiler Entwicklungsmethoden"
+    ]
+  },
+  {
+    "date": {
+      "from": { "day": 1, "month": 3, "year": 2017 },
+      "to": { "day": 1, "month": 10, "year": 2017 }
+    },
+    "place": "Mobile Banking App",
+    "description": "Entwicklung einer modularen Banking-App.\nDie App soll als Teil einer Product-Suite für Banken dem Banken-Endkunden die Möglichkeit bieten mobil und jederzeit über seine finanzielle Lage informiert zu bleiben.\nFür die Bank als Kunden steht hierbei vorallem die Modularität bei der Auswahl gewünschter Featuresets im Vordergrund.",
+    "tasks": [
+      "Entwicklung einer Hybriden App als React-SPA in einem Cordova Container",
+      "Testen der Komponenten und der Redux-Stores",
+      "Entwicklung eines Java-REST-Adapters für HBCI/FinTS",
+      "Entwicklung an einem Java-HBCI/FinTS-Mock-Server zum Integrationstesten des Backends"
     ]
   },
   {
