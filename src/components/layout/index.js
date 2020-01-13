@@ -23,6 +23,9 @@ const Layout = ({ location, title, children, mainClassName = "card" }) => {
       All the websites code can be found on this
       {` `}
       <a className="external-link" href="https://www.github.com/shebtastic/sheb.rocks" rel="noopener noreferrer">GitHub Repo</a>.
+      <br />
+      <br />
+      You can find my CV <Link to={`/cv`}>here</Link>.
       <hr />
       <Link to={`/imprint`}>Imprint (Impressum)</Link>
       {` `}
