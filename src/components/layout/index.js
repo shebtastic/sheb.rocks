@@ -1,39 +1,46 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Bio from '../bio'
+import Bio from "../bio"
 
 import { rhythm, scale } from "../../utils/typography"
 
 
-const Layout = ({ location, title, children, mainClassName = "card" }) => {
+const Layout = ({
+  location: {
+    pathname
+  } = {},
+  title,
+  children,
+  mainClassName = "card" ,
+}) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header, footer
 
   let obligatoryLinks = (
     <>
       © {new Date().getFullYear()}, Built with
-      {` `}
+      {" "}
       <a className="external-link" href="https://www.gatsbyjs.org" rel="noopener noreferrer">Gatsby</a>.
-      {` `}
+      {" "}
       Hosted on
-      {` `}
+      {" "}
       <a className="external-link" href="https://www.pages.github.com" rel="noopener noreferrer">GitHub Pages</a>.
       <br />
       All the websites code can be found on this
-      {` `}
+      {" "}
       <a className="external-link" href="https://www.github.com/shebtastic/sheb.rocks" rel="noopener noreferrer">GitHub Repo</a>.
       <br />
       <br />
-      You can find my CV <Link to={`/cv`}>here</Link>.
+      You can find my CV <Link to={"/cv"}>here</Link>.
       <hr />
-      <Link to={`/imprint`}>Imprint (Impressum)</Link>
-      {` `}
-      <Link to={`/dataprivacy`}>Data Privacy Policy (Datenschutzerklärung)</Link>
+      <Link to={"/imprint"}>Imprint (Impressum)</Link>
+      {" "}
+      <Link to={"/dataprivacy"}>Data Privacy Policy (Datenschutzerklärung)</Link>
     </>
   )
 
-  if (location.pathname === rootPath) {
+  if (pathname === rootPath) {
     header = (
       <>
         <h1
@@ -45,13 +52,13 @@ const Layout = ({ location, title, children, mainClassName = "card" }) => {
         >
           <Link
             style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
+              boxShadow: "none",
+              textDecoration: "none",
+              color: "inherit",
             }}
-            to={`/`}
+            to={"/"}
           >
-            Hey there! <span role={`img`} aria-label={`waving hand`}>👋</span>
+            Hey there! <span role={"img"} aria-label={"waving hand"}>👋</span>
           </Link>
         </h1>
         <Bio />
@@ -61,8 +68,12 @@ const Layout = ({ location, title, children, mainClassName = "card" }) => {
   } else {
     header = (
       <>
-        {title}
-        <Link to={`/`}>← Home</Link>
+        {
+          typeof title === "string"
+            ? <h1>{title}</h1>
+            : title
+        }
+        <Link to={"/"}>← Home</Link>
       </>
     )
     footer = (
@@ -77,8 +88,8 @@ const Layout = ({ location, title, children, mainClassName = "card" }) => {
   return (
     <div
       style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
+        marginLeft: "auto",
+        marginRight: "auto",
         maxWidth: rhythm(30),
       }}
     >

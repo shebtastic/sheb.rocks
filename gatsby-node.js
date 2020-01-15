@@ -5,7 +5,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
-  const tagTemplate = path.resolve(`./src/templates/tags.js`)
+  const tagTemplate = path.resolve(`./src/templates/tag.js`)
 
   return graphql(
     `
@@ -60,7 +60,7 @@ exports.createPages = ({ graphql, actions }) => {
     // Make tag pages
     tags.forEach(tag => {
       createPage({
-        path: `/tags/${tag.fieldValue.replace(/\s/,'-')}/`,
+        path: `/tags/${tag.fieldValue.replace(/\s/,"-")}/`,
         component: tagTemplate,
         context: {
           tag: tag.fieldValue,
@@ -76,10 +76,10 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === "MarkdownRemark") {
     const value = createFilePath({ node, getNode })
     createNodeField({
-      name: `slug`,
+      name: "slug",
       node,
       value,
     })

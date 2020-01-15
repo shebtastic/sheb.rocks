@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Fragment } from "react"
 
-import { StaticQuery, graphql } from 'gatsby'
-import Image from 'gatsby-image'
+import { graphql } from "gatsby"
+import Image from "gatsby-image"
 
 import Layout from "../components/layout"
 
@@ -241,116 +241,127 @@ const skills = [
   "JavaScript", "React", "React Native", "Java", "Python", "Elixir", "Go", "Kubernetes", "AWS", "Azure", "GCP", "Scrum", "DevOps", "Machine Learning", "Usability / Accessibility"
 ]
 
-const CV = ({location}) => (
-  <StaticQuery
-    query={CvQuery}
-    render={data => {
-      const { author, social } = data.site.siteMetadata
-      return (
-        <Layout
-          location={location}
-          mainClassName="cv"
-          title={
-            <>
-              <h1>Lebenslauf</h1>
-              <h2>{author}</h2>
-              <Image fixed={data.qr.childImageSharp.fixed} className="qrlink" />
-            </>
-          }
-        >
-          <section className="card">
-            <h3>Kontakt</h3>
-            <div>
+const CV = ({
+  data: {
+    qr: {
+      childImageSharp: {
+        fixed,
+      },
+    },
+    site: {
+      siteMetadata: {
+        author,
+        social: {
+          mail,
+          keybase,
+          github,
+          twitter,
+          linkedin,
+          xing,
+        },
+      },
+    },
+  },
+}) =>
+  <Layout
+    mainClassName="cv"
+    title={
+      <>
+        <h1>Lebenslauf</h1>
+        <h2>{author}</h2>
+        <Image fixed={fixed} className="qrlink" />
+      </>
+    }
+  >
+    <section className="card">
+      <h3>Kontakt</h3>
+      <div>
+        <div>
+        <h4>E-Mail</h4>
+        <p><a className="external-link" href={`mailto:${mail}`}>{mail}</a></p>
+        <h4>Keybase</h4>
+        <p><a className="external-link" href={keybase}>{keybase}</a></p>
+        <h4>GitHub</h4>
+        <p><a className="external-link" href={github}>{github}</a></p>
+        <h4>Twitter</h4>
+        <p><a className="external-link" href={twitter}>{twitter}</a></p>
+        <h4>LinkedIn</h4>
+        <p><a className="external-link" href={linkedin}>{linkedin}</a></p>
+        <h4>Xing</h4>
+        <p><a className="external-link" href={xing}>{xing}</a></p>
+      </div></div>
+    </section>
+    <section className="card">
+      <h3>Berufliche Erfahrung</h3>
+      <div>
+        {
+          work.map((row, index) => (
+            <Fragment key={row.place+row.position+row.description+index}>
               <div>
-              <h4>E-Mail</h4>
-              <p><a className="external-link" href={`mailto:${social.mail}`}>{social.mail}</a></p>
-              <h4>Keybase</h4>
-              <p><a className="external-link" href={social.keybase}>{social.keybase}</a></p>
-              <h4>GitHub</h4>
-              <p><a className="external-link" href={social.github}>{social.github}</a></p>
-              <h4>Twitter</h4>
-              <p><a className="external-link" href={social.twitter}>{social.twitter}</a></p>
-              <h4>LinkedIn</h4>
-              <p><a className="external-link" href={social.linkedin}>{social.linkedin}</a></p>
-              <h4>Xing</h4>
-              <p><a className="external-link" href={social.xing}>{social.xing}</a></p>
-            </div></div>
-          </section>
-          <section className="card">
-            <h3>Berufliche Erfahrung</h3>
-            <div>
+                <h4>
+                  {
+                    `${String(row.date.from.month).padStart(2, "0")}.${row.date.from.year}`} - {row.date.to ? `${String(row.date.to.month).padStart(2, "0")}.${row.date.to.year}` : "Heute"
+                  }
+                </h4>
+                <p>
+                  {row.place},<br />
+                  {row.position}
+                  {row.description && <>,<br />{row.description}</>}
+                </p>
+              </div>
               {
-                work.map((row, index) => (
-                  <>
-                    <div>
-                      <h4>
-                        {
-                          `${String(row.date.from.month).padStart(2, '0')}.${row.date.from.year}`} - {row.date.to ? `${String(row.date.to.month).padStart(2, '0')}.${row.date.to.year}` : "Heute"
-                        }
-                      </h4>
-                      <p>
-                        {row.place},<br />
-                        {row.position}
-                        {row.description && <>,<br />{row.description}</>}
-                      </p>
-                    </div>
-                    {
-                      index !== work.length - 1 && <hr />
-                    }
-                  </>
-                ))
+                index !== work.length - 1 && <hr />
               }
-            </div>
-          </section>
-          <section className="card">
-            <h3>Skills</h3>
-            <div>
-              <p>
-                {
-                  skills.join(', ')
-                }
-              </p>
-            </div>
-          </section>
-          <section className="card">
-            <h3>Projekte</h3>
-            <div>
+            </Fragment>
+          ))
+        }
+      </div>
+    </section>
+    <section className="card">
+      <h3>Skills</h3>
+      <div>
+        <p>
+          {
+            skills.join(", ")
+          }
+        </p>
+      </div>
+    </section>
+    <section className="card">
+      <h3>Projekte</h3>
+      <div>
+        {
+          projects.map((row, index) => (
+            <Fragment key={row.place+index}>
+              <div>
+                <h4>
+                  {
+                    `${String(row.date.from.month).padStart(2, "0")}.${row.date.from.year}`} - {row.date.to ? `${String(row.date.to.month).padStart(2, "0")}.${row.date.to.year}` : "Heute"
+                  }
+                </h4>
+                <div>
+                  {
+                    row.description.split("\n").map((paragraph, index) => <p key={row.place+index+"p"}>{paragraph}</p>)
+                  }
+                  <ul>
+                    {
+                      row.tasks && row.tasks.map((task, index) => <li key={row.place+index+"li"}>{task}</li>)
+                    }
+                  </ul>
+                </div>
+              </div>
               {
-                projects.map((row, index) => (
-                  <>
-                    <div>
-                      <h4>
-                        {
-                          `${String(row.date.from.month).padStart(2, '0')}.${row.date.from.year}`} - {row.date.to ? `${String(row.date.to.month).padStart(2, '0')}.${row.date.to.year}` : "Heute"
-                        }
-                      </h4>
-                      <div>
-                        {
-                          row.description.split('\n').map(paragraph => <p>{paragraph}</p>)
-                        }
-                        <ul>
-                          {
-                            row.tasks && row.tasks.map(task => <li>{task}</li>)
-                          }
-                        </ul>
-                      </div>
-                    </div>
-                    {
-                      index !== projects.length - 1 && <hr />
-                    }
-                  </>
-                ))
+                index !== projects.length - 1 && <hr />
               }
-            </div>
-          </section>
-        </Layout> 
-      )
-    }}
-  />
-)
+            </Fragment>
+          ))
+        }
+      </div>
+    </section>
+  </Layout> 
 
-const CvQuery = graphql`
-  query CvQuery {
+export const pageQuery = graphql`
+  query {
     qr: file(absolutePath: { regex: "/cv-link.png/" }) {
       childImageSharp {
         fixed(width: 100) {
@@ -373,4 +384,5 @@ const CvQuery = graphql`
     }
   }
 `
+
 export default CV

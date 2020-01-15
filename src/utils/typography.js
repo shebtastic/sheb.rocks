@@ -4,7 +4,7 @@ import Wordpress2016 from "typography-theme-wordpress-2016"
 Wordpress2016.overrideThemeStyles = () => {
   return {
     "a.gatsby-resp-image-link": {
-      boxShadow: `none`,
+      boxShadow: "none",
     },
   }
 }
@@ -14,77 +14,77 @@ delete Wordpress2016.googleFonts
 const typography = new Typography({
   ...Wordpress2016,
   headerFontFamily: [
-    'arial rounded mt bold', 'Futura', 'Trebuchet MS', 'Arial', 'sans-serif',
+    "arial rounded mt bold", "Futura", "Trebuchet MS", "Arial", "sans-serif",
   ],
   bodyFontFamily: [
-    'Futura', 'Trebuchet MS', 'Arial', 'sans-serif',
+    "Futura", "Trebuchet MS", "Arial", "sans-serif",
   ],
   overrideThemeStyles: (VerticalRythm, options, styles) => ({
-    'html, body': {
-      minWidth: '100%',
-      minHeight: '100%',
+    "html, body": {
+      minWidth: "100%",
+      minHeight: "100%",
     },
-    'html': {
-      background: 'linear-gradient( 120deg, hsla(45, 99%, 97%, 0.7) 0%, hsla(189, 100%, 96%, 0.5) 50%, hsla(335, 100%, 95%, 0.5) 100% )',
+    "html": {
+      background: "linear-gradient( 120deg, hsla(45, 99%, 97%, 0.7) 0%, hsla(189, 100%, 96%, 0.5) 50%, hsla(335, 100%, 95%, 0.5) 100% )",
     },
-    'main': {
+    "main": {
       margin: `${VerticalRythm.rhythm(1.5)} 0`,
     },
-    '.card': {
-      position: 'relative',
+    ".card": {
+      position: "relative",
       padding: VerticalRythm.rhythm(1),
       margin: `${VerticalRythm.rhythm(1)}`,
-      borderRadius: '24px',
-      boxShadow: '-8px -6px 80px 0 inset hsla(0, 0%, 100%, 0.38)',
+      borderRadius: "24px",
+      boxShadow: "-8px -6px 80px 0 inset hsla(0, 0%, 100%, 0.38)",
     },
-    '.cv .card h4': {
-      marginBottom: '0.5em',
+    ".cv .card h4": {
+      marginBottom: "0.5em",
     },
-    '.cv p': {
+    ".cv p": {
       marginBottom: 0,
     },
-    '.cv ul': {
-      marginTop: 'calc(1.75rem / 2)',
+    ".cv ul": {
+      marginTop: "calc(1.75rem / 2)",
     },
-    '.qrlink': {
-      position: 'absolute !important',
-      top: '1.75rem',
-      right: '1.75rem',
-      display: 'none !important',
+    ".qrlink": {
+      position: "absolute !important",
+      top: "1.75rem",
+      right: "1.75rem",
+      display: "none !important",
     },
-    'h1, h2, h3, h4, h5, h6': {
+    "h1, h2, h3, h4, h5, h6": {
       fontFamily: [
-        'arial rounded mt bold', 'Futura', 'Trebuchet MS', 'Arial', 'sans-serif',
-      ].join(','),
+        "arial rounded mt bold", "Futura", "Trebuchet MS", "Arial", "sans-serif",
+      ].join(","),
       marginTop: 0,
     },
-    'hr': {
+    "hr": {
       marginTop: styles.hr.marginBottom,
     },
-    'ul': {
+    "ul": {
       paddingLeft: VerticalRythm.rhythm(1),
     },
-    'p': {
+    "p": {
       marginBottom: VerticalRythm.rhythm(0.5),
     },
-    'body': {
-      color: 'black',
+    "body": {
+      color: "black",
     },
-    'a': {
-      textDecoration: 'none',
+    "a": {
+      textDecoration: "none",
       boxShadow: `0px -${VerticalRythm.rhythm(1 / 9)} 0px 0px #00ddff inset`,
-      transition: 'box-shadow 0.3s',
-      color: 'black',
+      transition: "box-shadow 0.3s",
+      color: "black",
     },
-    'h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a': {
+    "h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a": {
       boxShadow: `0px -${VerticalRythm.rhythm(1 / 9)} 0px 0px #00ddff inset`,
     },
-    'a.external-link': {
+    "a.external-link": {
       boxShadow: `0px -${VerticalRythm.rhythm(1 / 9)} 0px 0px hsla(334, 100%, 45%, 1) inset`
     },
-    'a:hover, a:focus': {
+    "a:hover, a:focus": {
       boxShadow: `0px -${VerticalRythm.rhythm(1)} 0px 0px #ffc800 inset`,
-      color: 'black',
+      color: "black",
     }
   })
 })
@@ -99,7 +99,7 @@ pre { font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Luci
  */
 
 // Hot reload typography in development.
-if (process.env.NODE_ENV !== `production`) {
+if (process.env.NODE_ENV !== "production") {
   typography.injectStyles()
 }
 
