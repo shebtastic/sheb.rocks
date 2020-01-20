@@ -42,7 +42,7 @@ const BlogPostTemplate = ({
               {"[ "}
               {tags.map((tag, index, {length}) => 
                 <Fragment key={tag}>
-                  <Link to={`/tags/${tag.replace(/\s/,"-")}`}>{tag}</Link>{index !== length - 1 ? ", " : null}
+                  <Link to={`/tags/${tag.replace(/\s/,"-").toLowerCase()}`}>{tag}</Link>{index !== length - 1 ? ", " : null}
                 </Fragment>
               )}
               {" ]"}

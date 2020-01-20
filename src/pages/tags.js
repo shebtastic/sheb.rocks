@@ -14,7 +14,7 @@ const TagsPage = ({
     <ul>
       {group.map(tag => (
         <li key={tag.fieldValue}>
-          <Link to={`/tags/${tag.fieldValue.replace(/\s/,"-")}`}>
+          <Link to={`/tags/${tag.fieldValue.replace(/\s/,"-").toLowerCase()}`}>
             {tag.fieldValue} ({tag.totalCount})
           </Link>
         </li>

@@ -60,7 +60,7 @@ exports.createPages = ({ graphql, actions }) => {
     // Make tag pages
     tags.forEach(tag => {
       createPage({
-        path: `/tags/${tag.fieldValue.replace(/\s/,"-")}/`,
+        path: `/tags/${tag.fieldValue.replace(/\s/,"-").toLowerCase()}/`,
         component: tagTemplate,
         context: {
           tag: tag.fieldValue,

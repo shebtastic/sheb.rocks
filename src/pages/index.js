@@ -44,7 +44,7 @@ const BlogIndex = ({
                   {"[ "}
                   {node.frontmatter.tags.map((tag, index, {length}) =>
                     <Fragment key={tag+node.fields.slug}>
-                      <Link to={`/tags/${tag.replace(/\s/,"-")}`}>{tag}</Link>{index !== length - 1 ? ", " : null}
+                      <Link to={`/tags/${tag.replace(/\s/,"-").toLowerCase()}`}>{tag}</Link>{index !== length - 1 ? ", " : null}
                     </Fragment>
                   )}
                   {" ]"}
