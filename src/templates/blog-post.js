@@ -10,6 +10,7 @@ const BlogPostTemplate = ({
     markdownRemark: {
       html,
       excerpt,
+      tableOfContents,
       frontmatter: {
         title,
         description,
@@ -49,7 +50,7 @@ const BlogPostTemplate = ({
           : null
       }
     </p>
-    <div dangerouslySetInnerHTML={{ __html: html }} />
+    <div dangerouslySetInnerHTML={{ __html: tableOfContents ? tableOfContents + html : html }} />
     <hr
       style={{
         marginBottom: rhythm(1),
@@ -87,6 +88,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       excerpt(pruneLength: 160)
       html
+      tableOfContents(absolute: false)
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
