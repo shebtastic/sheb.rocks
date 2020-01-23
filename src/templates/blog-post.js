@@ -50,7 +50,11 @@ const BlogPostTemplate = ({
           : null
       }
     </p>
-    <div dangerouslySetInnerHTML={{ __html: tableOfContents ? tableOfContents + html : html }} />
+    <div dangerouslySetInnerHTML={{
+      __html: tableOfContents 
+        ? `<h2>Table of Contents</h2>${tableOfContents}<hr />` + html.replace(/(<a.*?)(href="htt.*?\/a>)/g,"$1class=\"external-link\" $2")
+        : html.replace(/(<a.*?)(href="htt.*?\/a>)/g,"$1class=\"external-link\" $2")
+    }} />
     <hr
       style={{
         marginBottom: rhythm(1),
