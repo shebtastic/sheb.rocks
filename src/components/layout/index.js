@@ -32,7 +32,7 @@ const Layout = ({
       <a className="external-link" href="https://www.github.com/shebtastic/sheb.rocks" rel="noopener noreferrer">GitHub Repo</a>.
       <br />
       <br />
-      You can find my CV <Link to={"/cv"}>here</Link>.
+      You can <Link to={"/cv"}>find my CV here</Link>.
       <hr />
       <Link to={"/imprint"}>Imprint (Impressum)</Link>
       {" "}
