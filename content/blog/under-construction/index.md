@@ -1,7 +1,7 @@
 ---
 title: WIP - This page is under construction!
 date: "2019-10-01"
-tags: ["under construction"]
+tags: ["Under Construction"]
 description: "I'm working on it!"
 ---
 

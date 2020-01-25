@@ -1,7 +1,7 @@
 ---
 title: Animated random background gradients
 date: "2019-10-16"
-tags: ["css", "js", "frontend", "web"]
+tags: ["CSS", "JS", "Frontend", "Web"]
 description: Adding a first simple animated background to this page has been surprisingly simple. Using a keyframe and CSS gradient, this was fairly easy to integrate.
 ---
 
@@ -23,7 +23,7 @@ My usage is simply the following line, added to my layout component:
 
 This currently is a component, that doesn't take any props (including children) and also doesnt render anything out.
 
-Due to the fact that the `ReactDOM.render()` from `react-dom` here in use by the Gatsby, doesn't attach to the `&lthtml&gt` root tag and also probably shouldn't, I wanted to break out of the attached context and attach the gradient style to the DOM outside of my React context.
+Due to the fact that the `ReactDOM.render()` from `react-dom` here in use by the Gatsby, doesn't attach to the `<html>` root tag and also probably shouldn't, I wanted to break out of the attached context and attach the gradient style to the DOM outside of my React context.
 
 On the one hand, that's a pretty bad idea, since it's not managed from React and I'm basically setting stuff outside my scope, because I can. Doing so is in total disregard of what might already be there and who or what else uses that attribute. On the other hand, it also opens up another possibility: state persistence across renders, without having to muck with the Gatsby setup. So far I'm reshuffling the gradient on every rerender, but I might want to keep it across renders and since it's not part of the React render, that also means it's not prone to flickering during.
 
