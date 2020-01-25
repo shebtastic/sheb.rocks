@@ -14,18 +14,15 @@ const Tags = ({
     },
   },
 }) =>
-  <Layout>
-    <h1>{`${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`}</h1>
+  <Layout title={`${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`}>
     <ul>
-      {edges.map(({ node }) => {
-        const { slug } = node.fields
-        const { title } = node.frontmatter
-        return (
+      {
+        edges.map(({ node: { fields: { slug }, frontmatter: { title } } }) =>
           <li key={slug}>
             <Link to={`/blog${slug}`}>{title}</Link>
           </li>
         )
-      })}
+      }
     </ul>
     <Link to="/tags/">All tags</Link>
   </Layout>

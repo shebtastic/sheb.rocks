@@ -295,25 +295,25 @@ const CV = ({
       <h3>Berufliche Erfahrung</h3>
       <div>
         {
-          work.map((row, index) => (
-            <Fragment key={row.place+row.position+row.description+index}>
+          work.map(({ place, position, description, date }, index) =>
+            <Fragment key={place + position + description + index}>
               <div>
                 <h4>
                   {
-                    `${String(row.date.from.month).padStart(2, "0")}.${row.date.from.year}`} - {row.date.to ? `${String(row.date.to.month).padStart(2, "0")}.${row.date.to.year}` : "Heute"
+                    `${String(date.from.month).padStart(2, "0")}.${date.from.year}`} - {date.to ? `${String(date.to.month).padStart(2, "0")}.${date.to.year}` : "Heute"
                   }
                 </h4>
                 <p>
-                  {row.place},<br />
-                  {row.position}
-                  {row.description && <>,<br />{row.description}</>}
+                  {place},<br />
+                  {position}
+                  {description && <>,<br />{description}</>}
                 </p>
               </div>
               {
                 index !== work.length - 1 && <hr />
               }
             </Fragment>
-          ))
+          )
         }
       </div>
     </section>
@@ -331,21 +331,21 @@ const CV = ({
       <h3>Projekte</h3>
       <div>
         {
-          projects.map((row, index) => (
-            <Fragment key={row.place+index}>
+          projects.map(({ place, date, description, tasks }, index) =>
+            <Fragment key={place + index}>
               <div>
                 <h4>
                   {
-                    `${String(row.date.from.month).padStart(2, "0")}.${row.date.from.year}`} - {row.date.to ? `${String(row.date.to.month).padStart(2, "0")}.${row.date.to.year}` : "Heute"
+                    `${String(date.from.month).padStart(2, "0")}.${date.from.year}`} - {date.to ? `${String(date.to.month).padStart(2, "0")}.${date.to.year}` : "Heute"
                   }
                 </h4>
                 <div>
                   {
-                    row.description.split("\n").map((paragraph, index) => <p key={row.place+index+"p"}>{paragraph}</p>)
+                    description.split("\n").map((paragraph, index) => <p key={place + index + "p"}>{paragraph}</p>)
                   }
                   <ul>
                     {
-                      row.tasks && row.tasks.map((task, index) => <li key={row.place+index+"li"}>{task}</li>)
+                      tasks && tasks.map((task, index) => <li key={place + index + "li"}>{task}</li>)
                     }
                   </ul>
                 </div>
@@ -354,7 +354,7 @@ const CV = ({
                 index !== projects.length - 1 && <hr />
               }
             </Fragment>
-          ))
+          )
         }
       </div>
     </section>

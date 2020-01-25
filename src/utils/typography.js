@@ -56,6 +56,8 @@ const typography = new Typography({
       fontFamily: [
         "arial rounded mt bold", "Futura", "Trebuchet MS", "Arial", "sans-serif",
       ].join(","),
+    },
+    "header h1, header h2, header h3, header h4, header h5, header h6, main.cv h1, main.cv h2, main.cv h3, main.cv h4, main.cv h5, main.cv h6": {
       marginTop: 0,
     },
     "hr": {

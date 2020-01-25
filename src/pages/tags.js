@@ -6,25 +6,28 @@ import Layout from "../components/layout"
 
 const TagsPage = ({
   data: {
-    allMarkdownRemark: { group }
+    allMarkdownRemark: {
+      group: tags
+    }
   }
 }) =>
-  <Layout>
-    <h1>Tags</h1>
+  <Layout title="All Tags">
     <ul>
-      {group.map(tag => (
-        <li key={tag.fieldValue}>
-          <Link to={`/tags/${tag.fieldValue.replace(/\s/,"-").toLowerCase()}`}>
-            {tag.fieldValue} ({tag.totalCount})
-          </Link>
-        </li>
-      ))}
+      {
+        tags.map(({ fieldValue: tagName, totalCount }) =>
+          <li key={tagName}>
+            <Link to={`/tags/${tagName.replace(/\s/,"-").toLowerCase()}`}>
+              {tagName} ({totalCount})
+            </Link>
+          </li>
+        )
+      }
     </ul>
   </Layout>
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(limit: 2000) {
+    allMarkdownRemark {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

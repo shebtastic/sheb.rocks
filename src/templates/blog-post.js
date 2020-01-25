@@ -40,11 +40,13 @@ const BlogPostTemplate = ({
         tags && tags.length
           ? <>
               {"[ "}
-              {tags.map((tag, index, {length}) => 
-                <Fragment key={tag}>
-                  <Link to={`/tags/${tag.replace(/\s/,"-").toLowerCase()}`}>{tag}</Link>{index !== length - 1 ? ", " : null}
-                </Fragment>
-              )}
+              {
+                tags.map((tag, index, {length}) => 
+                  <Fragment key={tag}>
+                    <Link to={`/tags/${tag.replace(/\s/,"-").toLowerCase()}`}>{tag}</Link>{index !== length - 1 ? ", " : null}
+                  </Fragment>
+                )
+              }
               {" ]"}
             </> 
           : null
