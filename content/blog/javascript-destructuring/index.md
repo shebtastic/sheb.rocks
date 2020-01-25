@@ -1,6 +1,6 @@
 ---
 title: JavaScript destructuring
-date: "2020-01-16"
+date: "2020-01-25"
 tags: ["JS", "Node", "Web"]
 description: JavaScript introduced destructuring with ES6 back in 2015, but only recently I've grown really fond of it.
 ---
