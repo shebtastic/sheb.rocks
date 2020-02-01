@@ -82,7 +82,7 @@ const work = [
 const projects = [
   {
     "date": {
-      "from": { "day": 15, "month": 8, "year": 2018 },
+      "from": { "day": 15, "month": 8, "year": 2019 },
       "to": { "day": 31, "month": 12, "year": 2019 }
     },
     "place": "Internes Coaching",
@@ -233,7 +233,7 @@ const projects = [
       "Anforderungsanalyse",
       "Implementierung eines Test Runners für Java",
       "Implementierung eines Frameworks zur Generierung von Tests und Beispielen der Fehlernachstellung",
-      "Betreuung der Infrastruktur und des Frameworks."
+      "Betreuung der Infrastruktur und des Frameworks"
     ]
   }
 ]
