@@ -86,7 +86,7 @@ const projects = [
       "to": { "day": 31, "month": 12, "year": 2019 }
     },
     "place": "Internes Coaching",
-    "description": "Intern sollte besonders für Junior IT Consultants das Onboarding verbessert und technische Grundlagen verstärkt aufgebaut werden. Dabei wurde ein stärkerer Fokus auf den Einsatz aktueller Technologien gesetzt und gefördert.\nNeben Grundlagen wurden auch Best Practices, sowie Clean Code, Test Driven Development und Behaviour Driven Development, DevOps, API-Design, Architektur von Microservices, Umgang mit Legacy Code oder Fremdsystemen, und agilen Methodik vermittelt.\nDurchgeführt wurde dies während der Projektarbeit, bei Hackathons, Meetups und Schulungen.",
+    "description": "Coaching für Junior IT Consultants, sowie Verbesserung des Onboardings und verstärkter Aufbau technischer Grundlagen. Dabei wurde ein stärkerer Fokus auf den Einsatz aktueller Technologien gesetzt und gefördert.\nNeben Grundlagen wurden auch Best Practices, sowie Clean Code, Test Driven Development und Behaviour Driven Development, DevOps, API-Design, Architektur von Microservices, Umgang mit Legacy Code oder Fremdsystemen, und agilen Methodik vermittelt.\nDurchgeführt wurde dies während der Projektarbeit, bei Hackathons, Meetups und Schulungen.",
     "tasks": [
       "Agiles und technisches Coaching",
       "Code Review",
