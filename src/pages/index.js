@@ -33,7 +33,7 @@ const BlogIndex = ({
                 marginBottom: rhythm(1 / 4),
               }}
             >
-              <Link to={`/blog/${slug}`}>
+              <Link to={`/blog${slug}`}>
                 {title || slug}
               </Link>
             </h3>
