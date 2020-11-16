@@ -86,7 +86,7 @@ const projects = [
       "to": null
     },
     "place": "WDR mediagroup GmbH",
-    "description": "Entwicklung und Weiterentwicklung von neuen und bestehenden Sprachassistenzsystemen des WDR.\nDie Entwicklung bezog sich zum Großteil auf bereitzustellende Fulfillment-Endpoints für die jeweiligen Systeme, als auch Abbildung der Interaktionsmodelle auf den jeweiligen nativen Plattformen. Die Endpoints wurden als Node.js Serverless-Komponenten auf AWS Lambda deployed.\nBesonderer Fokus lag des Weiteren auf die Verbesserung und Modernisierung der Entwicklungsumgebung und der Auslieferungsprozesse, welche durch neues Testtooling und automatisierte CI/CD-Pipelines umgesetzt wurden.",
+    "description": "Entwicklung und Weiterentwicklung von neuen und bestehenden Sprachassistenzsystemen des WDR.\nDie Entwicklung bezog sich zum Großteil auf bereitzustellende Fulfillment-Endpoints für die jeweiligen Systeme, als auch Abbildung der Interaktionsmodelle auf den jeweiligen nativen Plattformen. Die Endpoints wurden als Node.js Serverless-Komponenten auf AWS Lambda deployed.\nBesonderer Fokus lag des Weiteren auf der Verbesserung und Modernisierung der Entwicklungsumgebung und der Auslieferungsprozesse, welche durch neues Testtooling und automatisierte CI/CD-Pipelines umgesetzt wurden.",
     "tasks": [
       "Erstellen von CI/CD-Pipelines",
       "Verbesserung der Builds",
