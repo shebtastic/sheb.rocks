@@ -283,7 +283,6 @@ const CV = ({
       <>
         <h1>Lebenslauf</h1>
         <h2>{author}</h2>
-        <Image fixed={fixed} className="qrlink" />
       </>
     }
   >
