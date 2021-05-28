@@ -82,7 +82,7 @@ const work = [
 const projects = [
   {
     "date": {
-      "from": { "day": 1, "month": 4, "year": 2021 },
+      "from": { "day": 1, "month": 5, "year": 2021 },
       "to": null
     },
     "place": "smirror GmbH",
