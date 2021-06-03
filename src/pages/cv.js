@@ -80,21 +80,21 @@ const work = [
   }
 ]
 const projects = [
-  {
-    "date": {
-      "from": { "day": 1, "month": 5, "year": 2021 },
-      "to": null
-    },
-    "place": "smirror GmbH",
-    "description": "Weiterentwicklung des Benutzerverwaltungssystems. Die Tätigkeit enthielt Konzeption und Umsetzung einer Cloud Native Anwendung auf Basis von Microservices in einer skalierbaren Serverless-Infrastruktur.\nGenutzt wurden hierzu primär AWS-Dienste Amplify, Cognito, Lambda und verschiedene andere. Als Paymentsystem wurde Stripe eingesetzt.",
-    "tasks": [
-      "Konzeption und Konfiguration",
-      "Entwicklung TypeScript Lambda",
-      "DevOps-Setup",
-      "Payment anbindung",
-      "Qualitätssicherung"
-    ]
-  },
+  // {
+  //   "date": {
+  //     "from": { "day": 1, "month": 5, "year": 2021 },
+  //     "to": null
+  //   },
+  //   "place": "smirror GmbH",
+  //   "description": "Weiterentwicklung des Benutzerverwaltungssystems. Die Tätigkeit enthielt Konzeption und Umsetzung einer Cloud Native Anwendung auf Basis von Microservices in einer skalierbaren Serverless-Infrastruktur.\nGenutzt wurden hierzu primär AWS-Dienste Amplify, Cognito, Lambda und verschiedene andere. Als Paymentsystem wurde Stripe eingesetzt.",
+  //   "tasks": [
+  //     "Konzeption und Konfiguration",
+  //     "Entwicklung TypeScript Lambda",
+  //     "DevOps-Setup",
+  //     "Payment anbindung",
+  //     "Qualitätssicherung"
+  //   ]
+  // },
   {
     "date": {
       "from": { "day": 1, "month": 4, "year": 2020 },
