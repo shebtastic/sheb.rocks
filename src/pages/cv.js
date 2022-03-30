@@ -80,21 +80,38 @@ const work = [
   }
 ]
 const projects = [
-  // {
-  //   "date": {
-  //     "from": { "day": 1, "month": 5, "year": 2021 },
-  //     "to": null
-  //   },
-  //   "place": "smirror GmbH",
-  //   "description": "Weiterentwicklung des Benutzerverwaltungssystems. Die Tätigkeit enthielt Konzeption und Umsetzung einer Cloud Native Anwendung auf Basis von Microservices in einer skalierbaren Serverless-Infrastruktur.\nGenutzt wurden hierzu primär AWS-Dienste Amplify, Cognito, Lambda und verschiedene andere. Als Paymentsystem wurde Stripe eingesetzt.",
-  //   "tasks": [
-  //     "Konzeption und Konfiguration",
-  //     "Entwicklung TypeScript Lambda",
-  //     "DevOps-Setup",
-  //     "Payment anbindung",
-  //     "Qualitätssicherung"
-  //   ]
-  // },
+  {
+    "date": {
+      "from": { "day": 1, "month": 9, "year": 2021 },
+      "to": null
+    },
+    "place": "Automatisierte Dokumentenextraktion",
+    "description": "Migration und Weiterentwicklung bestehender Integration und Infrastruktur zur automatisierten Dokumentenextraktion im Bereich Legal Tech. Im Rahmen der Tätigkeit wurde bestehende Infrastruktur auf eine eventbasierte Architektur migriert und im Zuge dessen modernisiert.\nGenutzt wurden AWS-Dienste wie SNS, SQS, Lambda, EKS und verschiedene andere.\nNeue Features wurden von Prozessabstimmung über Entwicklung und Inbetriebnahme begleitet.\nEntwickelt wurde zunächst in JavaScript und TypeScript, später primär Python. Nach Bedarf wurde Go eingesetzt.\nTeamübergreifende Kommunikation beinhaltete besonders Abstimmung von Prozessen, Schnittstellen und entsprechender Modelle und Vermittlung von Methoden und Ansätzen zur Erstellung und Dokumentation solcher.",
+    "tasks": [
+      "Konzeption und Migration",
+      "DevOps-Setup",
+      "Verbesserung Developer Experience",
+      "Beratung Prozess- und Datenmodellierung",
+      "Coaching in agiler und technischer Methodik",
+      "Unterstützung Hackathons",
+      "Umsetzung Proof of Concepts"
+    ]
+  },
+  {
+    "date": {
+      "from": { "day": 1, "month": 5, "year": 2021 },
+      "to": { "day": 15, "month": 9, "year": 2021 }
+    },
+    "place": "smirror GmbH",
+    "description": "Weiterentwicklung des Benutzerverwaltungssystems. Die Tätigkeit enthielt Konzeption und Umsetzung einer Cloud Native Anwendung auf Basis von Microservices in einer skalierbaren Serverless-Infrastruktur.\nGenutzt wurden hierzu primär AWS-Dienste Amplify, Cognito, Lambda und verschiedene andere. Als Paymentsystem wurde Stripe eingesetzt.",
+    "tasks": [
+      "Konzeption und Konfiguration",
+      "Entwicklung TypeScript Lambda",
+      "DevOps-Setup",
+      "Payment anbindung",
+      "Qualitätssicherung"
+    ]
+  },
   {
     "date": {
       "from": { "day": 1, "month": 4, "year": 2020 },
