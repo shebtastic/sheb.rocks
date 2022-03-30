@@ -319,7 +319,7 @@ const CV = ({
         <p><a className="external-link" href={xing}>{xing}</a></p>
       </div></div>
     </section>
-    <section className="card">
+    {/* <section className="card">
       <h3>Berufliche Erfahrung</h3>
       <div>
         {
@@ -344,7 +344,7 @@ const CV = ({
           )
         }
       </div>
-    </section>
+    </section> */}
     <section className="card">
       <h3>Skills</h3>
       <div>
