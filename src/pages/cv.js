@@ -299,7 +299,7 @@ const CV = ({
         author,
         social: {
           mail,
-          keybase,
+          // keybase,
           github,
           twitter,
           linkedin,
@@ -324,8 +324,8 @@ const CV = ({
         <div>
         <h4>E-Mail</h4>
         <p><a className="external-link" href={`mailto:${mail}`}>{mail}</a></p>
-        <h4>Keybase</h4>
-        <p><a className="external-link" href={keybase}>{keybase}</a></p>
+        {/* <h4>Keybase</h4>
+        <p><a className="external-link" href={keybase}>{keybase}</a></p> */}
         <h4>GitHub</h4>
         <p><a className="external-link" href={github}>{github}</a></p>
         <h4>Twitter</h4>
