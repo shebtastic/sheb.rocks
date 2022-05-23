@@ -284,7 +284,7 @@ const projects = [
   }
 ]
 const skills = [
-  "JavaScript", "TypeScript", "React", "React Native", "Java", "Python", "Elixir", "Go", "Kubernetes", "AWS", "Azure", "GCP", "Professional Scrum Master™️ level I (PSM I)", "DevOps", "Serverless", "Machine Learning", "Usability / Accessibility"
+  "JavaScript", "TypeScript", "React", "React Native", "Java", "Python", "Elixir", "Go", "Kubernetes", "ELK", "AWS", "Azure", "GCP", "Professional Scrum Master™️ level I (PSM I)", "DevOps", "Serverless", "Machine Learning", "Usability / Accessibility"
 ]
 
 const CV = ({
@@ -328,8 +328,6 @@ const CV = ({
         <p><a className="external-link" href={keybase}>{keybase}</a></p> */}
         <h4>GitHub</h4>
         <p><a className="external-link" href={github}>{github}</a></p>
-        <h4>Twitter</h4>
-        <p><a className="external-link" href={twitter}>{twitter}</a></p>
         <h4>LinkedIn</h4>
         <p><a className="external-link" href={linkedin}>{linkedin}</a></p>
         <h4>Xing</h4>
