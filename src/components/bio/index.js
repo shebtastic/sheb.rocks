@@ -51,13 +51,7 @@ const Bio = () => {
       <p style={{
         marginBottom: 0,
       }}>
-        You can message me on {" "}
-        <a className="external-link" href={keybase}>
-          keybase
-        </a>, {" "}
-        <a className="external-link" href={twitter}>
-          twitter
-        </a>, or write me a {" "}
+        The best method to contact me is writing me a{" "}
         <a className="external-link" href={`mailto:${mail}?subject=${encodeURI("Tell me more!")}&body=${encodeURI("I'm interested in < training | speaking | workshops | other-opportunities > on the topic of < topic >.\n\nDescription: \nContact:\n")}`}>
           mail
         </a>.
