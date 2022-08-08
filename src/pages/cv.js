@@ -83,7 +83,7 @@ const projects = [
   {
     "date": {
       "from": { "day": 1, "month": 9, "year": 2021 },
-      "to": null
+      "to": { "day": 30, "month": 6, "year": 2022 },
     },
     "place": "Automatisierte Dokumentenextraktion",
     "description": "Migration und Weiterentwicklung bestehender Integration und Infrastruktur zur automatisierten Dokumentenextraktion im Bereich Legal Tech. Im Rahmen der Tätigkeit wurde bestehende Infrastruktur auf eine eventbasierte Architektur migriert und im Zuge dessen modernisiert.\nGenutzt wurden AWS-Dienste wie SNS, SQS, Lambda, EKS und verschiedene andere.\nNeue Features wurden von Prozessabstimmung über Entwicklung und Inbetriebnahme begleitet.\nEntwickelt wurde zunächst in JavaScript und TypeScript, später primär Python. Nach Bedarf wurde Go eingesetzt.\nTeamübergreifende Kommunikation beinhaltete besonders Abstimmung von Prozessen, Schnittstellen und entsprechender Modelle und Vermittlung von Methoden und Ansätzen zur Erstellung und Dokumentation solcher.",
