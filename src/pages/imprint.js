@@ -14,7 +14,6 @@ const Imprint = () =>
     53115 Bonn</p>
     <h2>Kontakt</h2>
     <p>Telefon: <a className="external-link" href="tel:+49(0)1772319862" rel="nofollow">+49 (0) 177 2319 862</a><br />
-    Telefax: <a className="external-link" href="fax:+49(0)22824375224" rel="nofollow">+49 (0) 228 2437 5224</a><br />
     E-Mail: <a className="external-link" href="mailto:michael@sheb.rocks" rel="nofollow">michael@sheb.rocks</a></p>
     <h2>Umsatzsteuer-ID</h2>
     <p>Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:<br />
