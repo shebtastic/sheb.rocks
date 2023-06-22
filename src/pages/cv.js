@@ -82,6 +82,34 @@ const work = [
 const projects = [
   {
     "date": {
+      "from": { "day": 22, "month": 6, "year": 2023 },
+      "to": null,
+    },
+    "place": "DIO Studios GmbH",
+    "description": "Neuentwicklung einer Antragsstrecke zur Verpackungslizenzierung und des begleitenden CMS. Kern der Tätigkeit ist die Migration bestehender Prozesse und Komponenten, sowie Konzeption, Entwicklung, Absprache neuer Features in Anbindung an bestehende Drittsysteme.",
+    "tasks": [
+      "Konzeption und Beratung",
+      "Migration und Entwicklung",
+      "Coaching in agiler und technischer Methodik",
+      "Code Review",
+      "DevOps",
+    ]
+  },
+  {
+    "date": {
+      "from": { "day": 1, "month": 9, "year": 2022 },
+      "to": { "day": 31, "month": 4, "year": 2023 },
+    },
+    "place": "neuefische GmbH",
+    "description": "Coaching in Webdevelopment Bootcamps. Die Tätigkeit beinhaltete primär die Durchführung des Lehrauftrages, sowie Diskussion um Lehrplan und Inhalten des Curriculums. Des weiteren gab es vereinzelt Vorbereitung und Betreuung von Veranstaltungen und die gezielte Weiterbildung der Junior Coaches.",
+    "tasks": [
+      "Konzeption und Beratung",
+      "Coaching in agiler und technischer Methodik",
+      "Unterstützung Hackathons",
+    ]
+  },
+  {
+    "date": {
       "from": { "day": 1, "month": 9, "year": 2021 },
       "to": { "day": 30, "month": 6, "year": 2022 },
     },
